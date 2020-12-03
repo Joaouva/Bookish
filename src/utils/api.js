@@ -20,8 +20,8 @@ class BooksService {
     return this.service.delete(`/books/${isbn}`);
   }
 
-  editBook(updateBook) {
-    return this.service.put(`/books/${book.isbn}`, updatedBook);
+  editBook(updatedBook) {
+    return this.service.put(`/books/${updatedBook.isbn}`, updatedBook);
   }
 }
 
