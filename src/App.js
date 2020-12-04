@@ -4,25 +4,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import AuthService from './utils/auth';
 import React from 'react';
-<<<<<<< HEAD
-import Navbar from './components/Navbar';
-
-
-class App extends React.Component {
-  state = {
-    loggedInUser: null
-  }
-  render () {
-    return (
-      <div className="App">
-        <Navbar
-          loggedInUser={this.state.loggedInUser}
-          setCurrentUser={this.setCurrentUser}
-        />
-      </div>
-    );
-  }
-=======
 import Navbar from './components/Navbar'
 
 
@@ -61,7 +42,6 @@ class App extends React.Component {
             </div>
         );
     }
->>>>>>> 39fa2c95e6cbf1b40e872b37555c64a2fd643379
 }
 
 export default App;
