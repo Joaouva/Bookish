@@ -43,7 +43,37 @@ class BookDetails extends React.Component {
   }
 
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <div className="book-container">
+          <h2>{this.state.title}</h2>
+          <h3>{this.state.author}</h3>
+          <h4>{this.state.publisher}</h4>
+          <h4>{this.state.published}</h4>
+          <h4>{this.state.isbn}</h4>
+          <h4>{this.state.language}</h4>
+          <h4>{this.state.description}</h4>
+          <h3>{this.state.price}</h3>
+          <h3>{this.state.grade}</h3>
+        </div>
+        <div>
+          <img className='bookImage' src={this.state.image} alt='bookcover'/>
+        </div>
+        <div>
+          <button onClick={() => this.handleProjectDelete(this.state.isbn)}>
+            Delete
+          </button>
+        </div>
+        <div>
+          <button
+            onClick={() => {
+              this.props.history.push(`/books/${this.state.isbn}/edit`);
+            }}
+          >Edit Project
+          </button>
+        </div>
+      </div>
+    );
   }
 }
 
