@@ -1,11 +1,15 @@
 import axios from "axios";
 
-class BooksFromBd {
+class BooksFromDb {
   constructor() {
     let service = axios.create({
       baseURL: `${process.env.REACT_APP_BOOKS_API}/api`,
     });
     this.service = service;
+  }
+
+  getBookByIsbn(isbn) {
+    return this.service.get(`/books/${isbn}`);
   }
 
   getAllBooks() {
@@ -16,4 +20,4 @@ class BooksFromBd {
     return this.service.get(`/books/db/allbookshops`);
   }
 }
-export default BooksFromBd;
+export default BooksFromDb;

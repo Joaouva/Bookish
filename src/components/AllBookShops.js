@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BooksFromBd from "../utils/bd";
+import BooksFromDb from "../utils/bd";
 
-class GetBookShopsFromBd extends React.Component {
+class GetBookShopsFromDb extends React.Component {
   state = {
     booksshops: [],
   };
 
   componentDidMount() {
-    const booksFromdb = new BooksFromBd();
-    booksFromdb.getAll().then((response) => {
+    const booksFromDb = new BooksFromDb();
+    booksFromDb.getAllBookshops().then((response) => {
       this.setState({
         booksshops: response.data,
       });
@@ -33,4 +33,4 @@ class GetBookShopsFromBd extends React.Component {
   }
 }
 
-export default GetBookShopsFromBd;
+export default GetBookShopsFromDb;

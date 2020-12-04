@@ -10,7 +10,7 @@ class GetBooksFromBd extends React.Component {
 
   componentDidMount() {
     const booksFromdb = new BooksFromBd();
-    booksFromdb.getAll().then((response) => {
+    booksFromdb.getAllBooks().then((response) => {
       this.setState({
         books: response.data,
       });
