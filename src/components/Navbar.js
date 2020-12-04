@@ -14,43 +14,40 @@ class Navbar extends React.Component {
   render() {
     if (this.props.loggedInUser) {
       return (
-			<div>
-				<nav>
-					<ul>
-						<li>
-							<NavLink exact to="/">
-								Home
-							</NavLink>
-						</li>
+        <div>
+          <nav>
+            <ul>
+              <li>Welcome {this.props.loggedInUser.username}</li>
+              <li>
+                <NavLink exact to="/">
+                  Home
+                </NavLink>
+              </li>
 
-						<li>
-							<NavLink exact to="/profile">
-								Profile
-							</NavLink>
-						</li>
-						<li>
-							<NavLink to="/">
-								<button onClick={this.logoutUser}>
-									Log Out
-								</button>
-							</NavLink>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		);
-        }
-        
-        else {
-            return (
-                <div>
-                    <nav>
-                        <ul>
-                            <li>
-                                <NavLink exact to="/login">
-                                    Login
-                                </NavLink>
-                            </li>
+              <li>
+                <NavLink exact to="/profile">
+                  Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/">
+                  <button onClick={this.logoutUser}>Log Out</button>
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <NavLink exact to="/login">
+                  Login
+                </NavLink>
+              </li>
 
               <li>
                 <NavLink exact to="/signup">

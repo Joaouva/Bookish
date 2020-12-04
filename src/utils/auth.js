@@ -24,6 +24,7 @@ class AuthService {
   };
   //this returns if the user is either with an active session or not
   loggedin = () => {
+    console.group("The user is logged in");
     return this.service.get("/loggedin");
   };
 }
