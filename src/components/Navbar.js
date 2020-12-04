@@ -24,16 +24,10 @@ class Navbar extends React.Component {
               </li>
 
               <li>
-                <NavLink exact to="/">
+                <NavLink exact to="/profile">
                   Profile
                 </NavLink>
               </li>
-
-                            <li>
-                                <NavLink exact to="/">
-                                     Library
-                                </NavLink>
-                            </li>
                         </ul>
                     </nav>
                     

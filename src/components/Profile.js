@@ -7,3 +7,16 @@ import { withRouter } from "react-router-dom";
 //library - proprios livros para vender
 
 
+class Profile extends React.Component {
+
+    render() {
+        return (
+            <div>
+                <h1>Welcome to your profile </h1>
+
+            </div>
+        )
+    }
+}
+
+export default Profile;
