@@ -38,7 +38,10 @@ class App extends React.Component {
                 <Navbar
                     loggedInUser={this.state.loggedInUser}
                     setCurrentUser={this.setCurrentUser}
-                />
+            />
+            <Switch>
+              
+            </Switch>
             </div>
         );
     }
