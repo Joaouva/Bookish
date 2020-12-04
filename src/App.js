@@ -1,22 +1,47 @@
 import './App.css';
+import { Redirect, Route, Switch } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import AuthService from './utils/auth';
 import React from 'react';
+import Navbar from './components/Navbar'
 
 
 class App extends React.Component {
-  render () {
-    return (
-    <div className="App">
-<<<<<<< HEAD
-      <Navbar/>
-      
+    state = {
+        loggedInUser: null,
+    };
 
-=======
-      
-    
->>>>>>> 7e5ff5d197d07b1088679ea3011288fb3d40c86e
-    </div>
-    )
-  }
+    setCurrentUser = (user) => {
+        this.setState({
+            loggedInUser: user,
+        });
+    };
+
+    componentDidMount() {
+        if (this.state.loggedInUser === null) {
+            const authService = new AuthService();
+            authService.loggedin().then((response) => {
+                if (response.data._id) {
+                    this.setCurrentUser(response.data);
+                    localStorage.setItem("loggedInUser", response.data._id);
+                } else {
+                    localStorage.removeItem("loggedInUser");
+                }
+            });
+        }
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <Navbar
+                    loggedInUser={this.state.loggedInUser}
+                    setCurrentUser={this.setCurrentUser}
+                />
+            </div>
+        );
+    }
 }
 
 export default App;
