@@ -16,4 +16,3 @@ class BooksFromBd {
 
 }
 export default BooksFromBd;
-  // rota no be com uum find() retornar todos os libros 
