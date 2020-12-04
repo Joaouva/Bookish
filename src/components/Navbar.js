@@ -29,27 +29,6 @@ class Navbar extends React.Component {
                 </NavLink>
               </li>
 
-<<<<<<< HEAD
-              <li>
-                <NavLink exact to="/">
-                  Library
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <NavLink exact to="/login">
-                  Login
-                </NavLink>
-              </li>
-=======
                             <li>
                                 <NavLink exact to="/">
                                      Library
@@ -72,7 +51,6 @@ class Navbar extends React.Component {
                                     Login
                                 </NavLink>
                             </li>
->>>>>>> 39fa2c95e6cbf1b40e872b37555c64a2fd643379
 
               <li>
                 <NavLink exact to="/signup">
