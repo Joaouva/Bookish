@@ -12,7 +12,8 @@ class BooksFromBd {
     return this.service.get(`/books/db/allbooks`);
   }
 
-
-
+  getAllBookshops() {
+    return this.service.get(`/books/db/allbookshops`);
+  }
 }
 export default BooksFromBd;
