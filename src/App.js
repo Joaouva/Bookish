@@ -1,15 +1,14 @@
-import './App.css';
+import "./App.css";
 import { Redirect, Route, Switch } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import AuthService from './utils/auth';
-import React from 'react';
-import Navbar from './components/Navbar';
-import Homepage from './components/Homepage';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import Profile from './components/Profile';
-
+import AuthService from "./utils/auth";
+import React from "react";
+import Navbar from "./components/Navbar";
+import Homepage from "./components/Homepage";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Profile from "./components/Profile";
 
 class App extends React.Component {
     state = {
@@ -42,13 +41,13 @@ class App extends React.Component {
                 <Navbar
                     loggedInUser={this.state.loggedInUser}
                     setCurrentUser={this.setCurrentUser}
-            />
-            <Switch>
-              <Route exact path="/" component={Homepage}/>
-              <Route exact path="/login" component={Login}/>
-              <Route exact path="/signup" component={Signup}/>
-              <Route exact path="/profile/" component={Profile}/>
-            </Switch>
+                />
+                <Switch>
+                    <Route exact path="/" component={Homepage} />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/signup" component={Signup} />
+                    <Route exact path="/profile/" component={Profile} />
+                </Switch>
             </div>
         );
     }
