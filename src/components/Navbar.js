@@ -51,7 +51,7 @@ class Navbar extends React.Component {
                     <nav>
                         <ul>
                             <li>
-                                <NavLink exactto="/login">
+                                <NavLink exact to="/login">
                                     Login
                                 </NavLink>
                             </li>
