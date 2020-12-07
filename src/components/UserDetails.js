@@ -37,7 +37,7 @@ class UserDetails extends React.Component {
         {this.state.books.map((book, index) => {
           return (
             <div key={index}>
-              <Link to={`/books/${book}`}> 1 - {book.title} </Link>
+              <Link to={`/books/${book.ISBN}`}> - {book.title} </Link>
             </div>
           );
         })}
