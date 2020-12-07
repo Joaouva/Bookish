@@ -7,11 +7,11 @@ function Homepage() {
     <div>
       <NavLink exact to="/bookfeed">
         {" "}
-        Livrarias{" "}
+        Todos os Livros{" "}
       </NavLink>
       <NavLink exact to="/userfeed">
         {" "}
-        Livros{" "}
+        Todas as Livrarias{" "}
       </NavLink>
     </div>
   );

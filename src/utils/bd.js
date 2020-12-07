@@ -14,7 +14,7 @@ class BooksFromDb {
   }
 
   addBook(isbn, price, grade) {
-    return this.service.post("/books/associate", { isbn, price, grade });
+    return this.service.post('/books/associate', { isbn, price, grade});
   }
 
   getAllBooks() {
