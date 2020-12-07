@@ -13,8 +13,12 @@ class BooksFromDb {
     return this.service.get(`/books/${isbn}`);
   }
 
+  getUser(id) {
+    return this.service.get(`/books/db/allbookshops/${id}`);
+  }
+
   addBook(isbn, price, grade) {
-    return this.service.post('/books/associate', { isbn, price, grade});
+    return this.service.post("/books/associate", { isbn, price, grade });
   }
 
   getAllBooks() {

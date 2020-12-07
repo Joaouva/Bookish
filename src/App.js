@@ -14,6 +14,8 @@ import AllBookShops from "./components/AllBookShops";
 import AddBook from "./components/AddBook";
 import BookFound from "./components/BookFound";
 import BookDetails from "./components/BookDetails";
+import UserDetails from "./components/UserDetails";
+
 class App extends React.Component {
   state = {
     loggedInUser: null,
@@ -41,30 +43,35 @@ class App extends React.Component {
 
   render() {
     return (
-		<div className="App">
-			<ToastContainer />
-			<Navbar
-				loggedInUser={this.state.loggedInUser}
-				setCurrentUser={this.setCurrentUser}
-			/>
-			<Switch>
-				<Route exact path="/" component={Homepage} />
-				<Route
-					path="/login"
-					render={() => {
-						return <Login setCurrentUser={this.setCurrentUser} />;
-					}}
-				/>
-				<Route exact path="/signup" component={Signup} />
-				<Route exact path="/profile/" component={Profile} />
-				<Route exact path="/bookfeed" component={GetBooksFromDb} />
-				<Route exact path="/userfeed" component={AllBookShops} />
-				<Route exact path="/addbook" component={AddBook} />
-				<Route exact path="/books/:isbn" component={BookDetails} />
-				<Route exact path="/bookfound/:isbn" component={BookFound} />
-			</Switch>
-		</div>
-	);
+      <div className="App">
+        <ToastContainer />
+        <Navbar
+          loggedInUser={this.state.loggedInUser}
+          setCurrentUser={this.setCurrentUser}
+        />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route
+            path="/login"
+            render={() => {
+              return <Login setCurrentUser={this.setCurrentUser} />;
+            }}
+          />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/profile/" component={Profile} />
+          <Route exact path="/bookfeed" component={GetBooksFromDb} />
+          <Route exact path="/userfeed" component={AllBookShops} />
+          <Route exact path="/addbook" component={AddBook} />
+          <Route exact path="/books/:isbn" component={BookDetails} />
+          <Route exact path="/bookfound/:isbn" component={BookFound} />
+          <Route
+            exact
+            path="/books/db/allbookshops/:id"
+            component={UserDetails}
+          />
+        </Switch>
+      </div>
+    );
   }
 }
 
