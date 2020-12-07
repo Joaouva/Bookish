@@ -1,5 +1,5 @@
 import React from "react";
-import BooksService from "../utils/api";
+import BooksFromBd from "../utils/bd";
 import { withRouter } from "react-router-dom";
 
 // welcome - nome 
@@ -8,15 +8,38 @@ import { withRouter } from "react-router-dom";
 
 
 class Profile extends React.Component {
+	state = {
+		id: "",
+		username: "",
+		city: "",
+		name: "",
+		isCompany: false,
+		books: [],
+	};
 
-    render() {
-        return (
-            <div>
-                <h1>Welcome to your profile </h1>
-                
-            </div>
-        )
-    }
+	componentDidMount() {
+		const booksFromdb = new BooksFromBd();
+		const id = this.props.match.params.id;
+		booksFromdb.getUser(id).then((response) => {
+			console.log(response.data);
+			this.setState({
+				id: response.data._id,
+				books: response.data.books,
+				username: response.data.username,
+				city: response.data.city,
+				name: response.data.name,
+				isCompany: response.data.isCompany,
+			});
+		});
+	}
+
+	render() {
+		return (
+			<div>
+                <h1>Welcome to your profile {this.state.username}</h1>
+			</div>
+		);
+	}
 }
 
 export default Profile;

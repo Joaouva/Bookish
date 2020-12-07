@@ -58,7 +58,7 @@ class App extends React.Component {
             }}
           />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/profile/" component={Profile} />
+          <Route exact path="/profile/:id" component={Profile} />
           <Route exact path="/bookfeed" component={GetBooksFromDb} />
           <Route exact path="/userfeed" component={AllBookShops} />
           <Route exact path="/addbook" component={AddBook} />
