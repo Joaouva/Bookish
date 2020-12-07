@@ -36,8 +36,12 @@ class GetBooksFromApi extends React.Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const booksFromDb = new BooksFromDb();
+  //  const newBook = {title: this.state.book.title, }
+  const {title, author, description, published, publisher, language, image, isbn} = this.state.book
+  const { price, isUsed } = this.state;
+
     booksFromDb
-      .addBook(this.props.match.params.isbn, this.state.price, this.state.grade)
+      .addBook({title, author, description, published, publisher, language, image, isUsed, isbn, price})
       .then(() => {
         this.props.history.push(`/profile`);
       });
@@ -69,7 +73,7 @@ class GetBooksFromApi extends React.Component {
             <label>Used:</label>
             <input
               type="checkbox"
-              name="grade"
+              name="isUsed"
               onChange={this.handleChange}
               value={this.state.isUsed}
             />
