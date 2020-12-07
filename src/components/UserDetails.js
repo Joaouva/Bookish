@@ -37,7 +37,12 @@ class UserDetails extends React.Component {
         {this.state.books.map((book, index) => {
           return (
             <div key={index}>
-              <Link to={`/books/${book.ISBN}`}> - {book.title} </Link>
+              <Link to={`/books/${book.ISBN}`}>
+                <div>
+                  {" "}
+                  - {book.title} <img src={book.image}></img>{" "}
+                </div>
+              </Link>
             </div>
           );
         })}
