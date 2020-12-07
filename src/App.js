@@ -10,9 +10,10 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import GetBooksFromDb from "./components/AllBooks";
-import GetBookShopsFromDb from "./components/AllBookShops";
+import AllBookShops from "./components/AllBookShops";
 import AddBook from "./components/AddBook";
 import BookFound from "./components/BookFound";
+import BookDetails from "./components/BookDetails";
 class App extends React.Component {
   state = {
     loggedInUser: null,
@@ -57,9 +58,9 @@ class App extends React.Component {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/profile/" component={Profile} />
           <Route exact path="/bookfeed" component={GetBooksFromDb} />
-          <Route exact path="/userfeed" component={GetBookShopsFromDb} />
+          <Route exact path="/userfeed" component={AllBookShops} />
           <Route exact path="/addbook" component={AddBook} />
-          <Route exact path="/bookfound/:isbn" component={BookFound} />
+          <Route exact path="/books/:isbn" component={BookDetails} />
         </Switch>
       </div>
     );

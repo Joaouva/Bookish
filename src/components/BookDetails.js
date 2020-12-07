@@ -1,6 +1,6 @@
 import React from "react";
 import BooksService from "../utils/api";
-import withRouter from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { toast } from "react-toastify";
 
 class BookDetails extends React.Component {
@@ -35,12 +35,12 @@ class BookDetails extends React.Component {
     });
   }
   handleBookDelete = (isbn) => {
-      const booksService = new BooksService();
-      booksService.deleteBook(isbn).then(() => {
-        toast.warning('Book Deleted');
-        this.props.history.push('./')
-      })
-  }
+    const booksService = new BooksService();
+    booksService.deleteBook(isbn).then(() => {
+      toast.warning("Book Deleted");
+      this.props.history.push("./");
+    });
+  };
 
   render() {
     return (
@@ -57,7 +57,7 @@ class BookDetails extends React.Component {
           <h3>{this.state.grade}</h3>
         </div>
         <div>
-          <img className='bookImage' src={this.state.image} alt='bookcover'/>
+          <img className="bookImage" src={this.state.image} alt="bookcover" />
         </div>
         <div>
           <button onClick={() => this.handleProjectDelete(this.state.isbn)}>
@@ -69,7 +69,8 @@ class BookDetails extends React.Component {
             onClick={() => {
               this.props.history.push(`/books/${this.state.isbn}/edit`);
             }}
-          >Edit Project
+          >
+            Edit Project
           </button>
         </div>
       </div>

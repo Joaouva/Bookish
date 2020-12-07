@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BooksFromDb from "../utils/bd";
 
-class GetBookShopsFromDb extends React.Component {
+class AllBookShops extends React.Component {
   state = {
     booksshops: [],
   };
 
   componentDidMount() {
+    debugger;
     const booksFromDb = new BooksFromDb();
     booksFromDb.getAllBookshops().then((response) => {
       this.setState({
@@ -23,7 +24,7 @@ class GetBookShopsFromDb extends React.Component {
           return (
             <div key={index}>
               <Link to={`/books/db/allbookshops/${booksshops._id}`}>
-                {booksshops.name}
+                {booksshops.username}
               </Link>
             </div>
           );
@@ -33,4 +34,4 @@ class GetBookShopsFromDb extends React.Component {
   }
 }
 
-export default GetBookShopsFromDb;
+export default AllBookShops;
