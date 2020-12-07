@@ -1,6 +1,7 @@
 import React from "react";
 import BooksFromBd from "../utils/bd";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // welcome - nome 
 //about me
@@ -36,7 +37,15 @@ class Profile extends React.Component {
 	render() {
 		return (
 			<div>
-                <h1>Welcome to your profile {this.state.username}</h1>
+				<h1>Welcome to your profile {this.state.username}</h1>
+				<h2>Your books:</h2>
+				{this.state.books.map((books, index) => {
+					return (
+						<div key={index}>
+							<Link to={`/books/:isbn`}>{books.title}</Link>
+						</div>
+					);
+				})}
 			</div>
 		);
 	}
