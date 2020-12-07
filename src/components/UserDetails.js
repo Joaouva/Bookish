@@ -15,13 +15,14 @@ class UserDetails extends React.Component {
     const booksFromdb = new BooksFromBd();
     const id = this.props.match.params.id;
     booksFromdb.getUser(id).then((response) => {
+      console.log(response.data)
       this.setState({
         id: response.data._id,
         books: response.data.books,
         username: response.data.username,
         city: response.data.city,
         name: response.data.name,
-        isCompany: response.checked.isCompany,
+        isCompany: response.data.isCompany,
       });
     });
   }

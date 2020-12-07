@@ -9,7 +9,7 @@ class GetBooksFromApi extends React.Component {
   state = {
     book: [],
     price: "",
-    grade: "",
+    isUsed: false,
   };
 
   componentDidMount() {
@@ -24,8 +24,10 @@ class GetBooksFromApi extends React.Component {
   }
 
   handleChange = (event) => {
-    let { name, value } = event.target;
-
+    let { name, value, type } = event.target;
+    if (type === "checkbox") {
+      value = event.target.checked;
+    }
     this.setState({
       [name]: value,
     });
@@ -64,12 +66,12 @@ class GetBooksFromApi extends React.Component {
               onChange={this.handleChange}
               value={this.state.price}
             />
-            <label>Grade:</label>
+            <label>Used:</label>
             <input
-              type="text"
+              type="checkbox"
               name="grade"
               onChange={this.handleChange}
-              value={this.state.grade}
+              value={this.state.isUsed}
             />
             <button> Add Book </button>
           </form>

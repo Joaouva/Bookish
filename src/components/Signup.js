@@ -20,14 +20,15 @@ class Signup extends React.Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const authService = new AuthService();
+    const { username, password, name, isCompany, city } = this.state;
     authService
-      .signup(
-        this.state.username,
-        this.state.password,
-        this.state.name,
-        this.state.isCompany,
-        this.state.city
-      )
+      .signup({
+        username,
+        password,
+        name,
+        isCompany,
+        city,
+      })
       .then(() => {
         this.props.history.push("/");
       })

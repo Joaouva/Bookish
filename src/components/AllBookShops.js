@@ -8,7 +8,7 @@ class AllBookShops extends React.Component {
   };
 
   componentDidMount() {
-    debugger;
+ 
     const booksFromDb = new BooksFromDb();
     booksFromDb.getAllBookshops().then((response) => {
       this.setState({
@@ -23,7 +23,7 @@ class AllBookShops extends React.Component {
         {this.state.booksshops.map((booksshops, index) => {
           return (
             <div key={index}>
-              <Link to={`/books/db/allbookshops/${booksshops._id}`}>
+              <Link to={`/allbookshops/${booksshops._id}`}>
                 {booksshops.username}
               </Link>
             </div>
