@@ -15,7 +15,7 @@ class UserDetails extends React.Component {
     const booksFromdb = new BooksFromBd();
     const id = this.props.match.params.id;
     booksFromdb.getUser(id).then((response) => {
-      console.log(response.data)
+      console.log(response.data);
       this.setState({
         id: response.data._id,
         books: response.data.books,
@@ -30,14 +30,14 @@ class UserDetails extends React.Component {
   render() {
     return (
       <div>
-        <h1> Welcome to {this.state.name} </h1>
+        <h1> Welcome to Library: {this.state.name} ! </h1>
+        <h4>We are located in: {this.state.city}</h4>
+        <h4> Heres a list of our available books</h4>
 
-        <h3>Library location: {this.state.city}</h3>
-
-        {this.state.books.map((books, index) => {
+        {this.state.books.map((book, index) => {
           return (
             <div key={index}>
-              <Link to={`/books/:isbn`}>{books.title}</Link>
+              <Link to={`/books/${book._id}`}> 1 - {book._id} </Link>
             </div>
           );
         })}
