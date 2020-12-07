@@ -14,11 +14,12 @@ class BookDetails extends React.Component {
     image: "",
     description: "",
     price: "",
-    grade: "",
+    isUsed: "",
   };
   componentDidMount() {
     const booksService = new BooksService();
     const isbn = this.props.match.params.isbn;
+    debugger;
     booksService.getBookByIsbn(isbn).then((response) => {
       this.setState({
         title: response.data.title,
@@ -29,8 +30,13 @@ class BookDetails extends React.Component {
         language: response.data.language,
         image: response.data.image,
         description: response.data.description,
-        price: response.data.price,
-        grade: response.data.grade,
+      });
+      booksService.getBookDetails(isbn).then((response) => {
+        const book = response.data[0];
+        this.setState({
+          price: book.price,
+          isUsed: book.isUsed,
+        });
       });
     });
   }
@@ -43,7 +49,7 @@ class BookDetails extends React.Component {
   };
 
   render() {
-    return (
+    return this.state.price ? (
       <div>
         <div className="book-container">
           <h2>{this.state.title}</h2>
@@ -52,9 +58,9 @@ class BookDetails extends React.Component {
           <h4>{this.state.published}</h4>
           <h4>{this.state.isbn}</h4>
           <h4>{this.state.language}</h4>
-          <h4>{this.state.description}</h4>
+          <div dangerouslySetInnerHTML={{ __html: this.state.description }} />
           <h3>{this.state.price}</h3>
-          <h3>{this.state.grade}</h3>
+          <h3>{this.state.isUsed ? "usado" : "novo"}</h3>
         </div>
         <div>
           <img className="bookImage" src={this.state.image} alt="bookcover" />
@@ -74,6 +80,8 @@ class BookDetails extends React.Component {
           </button>
         </div>
       </div>
+    ) : (
+      <div>Loading</div>
     );
   }
 }

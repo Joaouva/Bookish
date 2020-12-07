@@ -12,6 +12,10 @@ class BooksService {
     return this.service.get(`/books/${isbn}`);
   }
 
+  getBookDetails(isbn) {
+    return this.service.get(`/books/${isbn}/details`);
+  }
+
   addBook(book) {
     return this.service.post("/books", book);
   }
