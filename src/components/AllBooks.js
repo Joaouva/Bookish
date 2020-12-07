@@ -28,9 +28,8 @@ class GetBooksFromBd extends React.Component {
 					return (
 						<div key={index}>
 							<Link to={`/books/${book.ISBN}`}>
-								<img src={book.image_url}></img>
+								<img src={book.image}></img>
 								<h1>{book.title}</h1>
-								<p>{book.ISBN}</p>
 							</Link>
 						</div>
 					);

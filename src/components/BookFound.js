@@ -53,7 +53,7 @@ class GetBooksFromApi extends React.Component {
         <div>
           <h1>{this.state.book.title}</h1>
           <h2>{this.state.book.author}</h2>
-          <h3>{this.state.book.description}</h3>
+          <div dangerouslySetInnerHTML={{ __html:this.state.book.description}} />
           <h3>{this.state.book.publisher}</h3>
           <h3>{this.state.book.published}</h3>
           <h3>{this.state.book.language}</h3>
