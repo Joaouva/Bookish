@@ -22,7 +22,7 @@ class GetBookShopsFromDb extends React.Component {
         {this.state.booksshops.map((booksshops, index) => {
           return (
             <div key={index}>
-              <Link to={`/ROUTEBOOKSHOPSDETAILS/${booksshops._id}`}>
+              <Link to={`/books/db/allbookshops/${booksshops._id}`}>
                 {booksshops.name}
               </Link>
             </div>
