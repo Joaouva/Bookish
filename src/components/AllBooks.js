@@ -6,7 +6,7 @@ import BooksService from "../utils/api";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardDeck from "react-bootstrap/CardDeck";
-
+import { Container, Row, Col } from "react-bootstrap";
 class GetBooksFromBd extends React.Component {
   state = {
     books: [],
@@ -60,24 +60,38 @@ class GetBooksFromBd extends React.Component {
         <div>
           {this.state.filteredBooks.map((book, index) => {
             return (
-				<div key={index}>
-					<CardDeck>
-						<Card>
-							<Card.Img variant="top" src={book.image} />
-							<Card.Body>
-								<Card.Title>{book.title}</Card.Title>
-							</Card.Body>
-							<Card.Footer>
-								<Link to={`/books/${book.ISBN}`}>
-									<Button variant="primary">View Book</Button>
-								</Link>
-								<small className="text-muted">
-									Last updated 3 mins ago
-								</small>
-							</Card.Footer>
-						</Card>
-					</CardDeck>
-				</div>
+				<Container>
+					<div key={index}>
+						<Row>
+							<Col>
+								<CardDeck
+									style={{
+										width: "20rem",
+									}}
+								>
+									<Card>
+										<Card.Img
+											variant="top"
+											src={book.image}
+										/>
+										<Card.Body>
+											<Card.Title>
+												{book.title}
+											</Card.Title>
+										</Card.Body>
+										<Card.Footer>
+											<Link to={`/books/${book.ISBN}`}>
+												<Button variant="primary">
+													View Book
+												</Button>
+											</Link>
+										</Card.Footer>
+									</Card>
+								</CardDeck>
+							</Col>
+						</Row>
+					</div>
+				</Container>
 			);
           })}
         </div>

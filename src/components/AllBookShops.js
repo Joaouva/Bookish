@@ -27,23 +27,30 @@ class AllBookShops extends React.Component {
         {this.state.booksshops.map((booksshops, index) => {
           return (
 				<div key={index}>
-					<CardDeck>
+					<CardDeck
+						style={{
+							width: "20rem",
+						}}
+					>
 						<Card>
-							<Card.Img variant="top" src="holder.js/100px160" />
+							<Card.Img
+								variant="top"
+								src="https://lh3.googleusercontent.com/proxy/1gKpVxdnofWhFwEREJFmaGsnOPYXSeZgSFxFc0EphEqNyY8ZXGJvVv4GhJKRahezm1mV6TqvwJlos8XJA1OApywabqcN38_epZMX8YDpZZxIpcMl99is1CA3T4g"
+							/>
 							<Card.Body>
 								<Card.Title>{booksshops.username}</Card.Title>
 								<Card.Text>{booksshops.about}</Card.Text>
 							</Card.Body>
 							<Card.Footer>
-								<Link to={`/allbookshops/${booksshops._id}`}>
-									<Button variant="primary">
-										View Book Shop
-									</Button>
-								</Link>
 								<small className="text-muted">
-									Last updated 3 mins ago
+									{booksshops.city}
 								</small>
 							</Card.Footer>
+							<Link to={`/allbookshops/${booksshops._id}`}>
+								<Button variant="primary">
+									View Book Shop
+								</Button>
+							</Link>
 						</Card>
 					</CardDeck>
 				</div>
