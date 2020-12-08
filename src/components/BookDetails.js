@@ -72,7 +72,6 @@ class BookDetails extends React.Component {
   Add to cart
 </button>
         </div>
-
       </div>
     ) : (
       <div>Loading</div>
