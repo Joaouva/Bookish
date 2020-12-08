@@ -13,6 +13,7 @@ function Homepage() {
         {" "}
         Todas as Livrarias{" "}
       </NavLink>
+      <button class="snipcart-checkout">Cart</button>
     </div>
   );
 }
