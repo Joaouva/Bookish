@@ -1,6 +1,8 @@
 import React from "react";
 import BooksService from "../utils/api";
 import { withRouter, NavLink } from "react-router-dom";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 class AddBook extends React.Component {
   state = {
@@ -27,8 +29,6 @@ class AddBook extends React.Component {
     return (
       <div>
         <h1> Add a new book: </h1>
-
-        <label> ISBN: </label>
         <form onSubmit={this.handleFormSubmit}>
           <input
             type="text"

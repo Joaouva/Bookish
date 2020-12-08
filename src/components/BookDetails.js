@@ -2,7 +2,7 @@ import React from "react";
 import BooksService from "../utils/api";
 import { withRouter } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import Spinner from "react-bootstrap/Spinner";
 class BookDetails extends React.Component {
   state = {
     title: "",
@@ -73,7 +73,9 @@ class BookDetails extends React.Component {
         </div>
       </div>
     ) : (
-      <div>Loading</div>
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
     );
   }
 }
