@@ -4,6 +4,9 @@ import React from "react";
 import BooksFromDb from "../utils/bd";
 import { withRouter } from "react-router-dom";
 import { toast } from "react-toastify";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 class EditBook extends React.Component {
   state = {
@@ -58,28 +61,35 @@ class EditBook extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.title}</h1>
-        <h3>Asking price: {this.state.price}</h3>
-        <h2>{this.state.isbn}</h2>
-        <img src={this.state.image}></img>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Price:</label>
-          <input
-            type="number"
-            name="price"
-            onChange={this.handleChange}
-            value={this.state.price}
-          />
-          <button>Save</button>
-          <div>
-            <button onClick={() => this.handleBookDelete(this.props.match.params.id)}>
-              Delete
-            </button>
-          </div>
-        </form>
+        <h1> Edit your book: </h1>
+        <Card style={{ width: "19rem" }}>
+          <Card.Img variant="top" src={this.state.image} />
+          <Card.Body>
+            <Card.Title> {this.state.title} </Card.Title>
+            <Card.Text> Asked Price: {this.state.price}</Card.Text>
+            <Form onSubmit={this.handleFormSubmit}>
+              <input
+                type="number"
+                name="price"
+                onChange={this.handleChange}
+                value={this.state.price}
+              />
+              <button>Save</button>
+              <button
+                onClick={() =>
+                  this.handleBookDelete(this.props.match.params.id)
+                }
+              >
+                Delete
+              </button>
+            </Form>
+          </Card.Body>
+        </Card>
       </div>
     );
   }
 }
 
 export default withRouter(EditBook);
+
+      
