@@ -64,7 +64,7 @@ class App extends React.Component {
 				<Route exact path="/userfeed" component={AllBookShops} />
 				<Route exact path="/addbook" component={AddBook} />
 				<Route exact path="/books/:isbn" component={BookDetails} />
-				<Route exact path="/editbook/:isbn" component={EditBook} />
+				<Route exact path="/editbook/:id" component={EditBook} />
 				<Route exact path="/bookfound/:isbn" component={BookFound} />
 				<Route exact path="/allbookshops/:id" component={UserDetails} />
 			</Switch>

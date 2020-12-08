@@ -41,7 +41,7 @@ class Profile extends React.Component {
         {this.state.books.map((book, index) => {
           return (
 				<div key={index}>
-					<Link to={`/editbook/${book.ISBN}`}> {book.title} </Link>
+					<Link to={`/editbook/${book._id}`}> {book.title} </Link>
 					<h4>Price: {this.state.books.price}</h4>
 				</div>
 			);

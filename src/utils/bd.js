@@ -31,8 +31,12 @@ class BooksFromDb {
 
 	//UVA CHANGES
 
-	editBook(updateBook) {
-    return this.service.put(`/books/${updateBook.ISBN}`, { ...updateBook });
+	editBook(id, price) {
+		return this.service.put(`/books/editbook/${id}`, {price});
+	}
+
+	getBookById(id) {
+		return this.service.get(`/books/editbook/${id}`);
 	}
 }
 export default BooksFromDb;
