@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import AuthService from "./utils/auth";
 import React from "react";
-import Navbar from "./components/Navbar";
+import LoginBar from "./components/LoginBar";
 import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
@@ -49,7 +49,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <ToastContainer />
-        <Navbar
+        <LoginBar
           loggedInUser={this.state.loggedInUser}
           setCurrentUser={this.setCurrentUser}
         />
