@@ -39,13 +39,7 @@ class BookDetails extends React.Component {
       });
     });
   }
-  handleBookDelete = (isbn) => {
-    const booksService = new BooksService();
-    booksService.deleteBook(isbn).then(() => {
-      toast.warning("Book Deleted");
-      this.props.history.push("./");
-    });
-  };
+
 
   render() {
     return this.state.price ? (
@@ -64,19 +58,10 @@ class BookDetails extends React.Component {
         <div>
           <img className="bookImage" src={this.state.image} alt="bookcover" />
         </div>
+
+       
         <div>
-          <button onClick={() => this.handleProjectDelete(this.state.isbn)}>
-            Delete
-          </button>
-        </div>
-        <div>
-          <button
-            onClick={() => {
-              this.props.history.push(`/books/${this.state.isbn}/edit`);
-            }}
-          >
-            Edit Project
-          </button>
+         
           <button class="snipcart-add-item"
   data-item-id={this.state.isbn}
   data-item-price={this.state.price}
