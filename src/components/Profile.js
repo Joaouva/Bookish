@@ -36,16 +36,18 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <h1>Welcome to your profile {this.state.username}</h1>
-        <h2>Your books:</h2>
-        {this.state.books.map((book, index) => {
-          return (
-				<div key={index}>
-					<Link to={`/editbook/${book._id}`}> {book.title} </Link>
-					<h4>Price: {this.state.books.price}</h4>
-				</div>
-			);
-        })}
+        <div>
+          <h1>Welcome to your profile {this.state.username}</h1>
+          <h2>Your books:</h2>
+          {this.state.books.map((book, index) => {
+            return (
+              <div key={index}>
+                <Link to={`/editbook/${book._id}`}> {book.title} </Link>
+                <h4>Price: {this.state.books.price}</h4>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
