@@ -4,6 +4,9 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import BooksService from "../utils/api";
 import BooksFromDb from "../utils/bd";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
 
 class GetBooksFromApi extends React.Component {
   state = {
@@ -51,34 +54,52 @@ class GetBooksFromApi extends React.Component {
       <div>
         <h3> Is this the book? </h3>
         <div>
-          <h1>{this.state.book.title}</h1>
-          <h2>{this.state.book.author}</h2>
-          <div dangerouslySetInnerHTML={{ __html:this.state.book.description}} />
-          <h3>{this.state.book.publisher}</h3>
-          <h3>{this.state.book.published}</h3>
-          <h3>{this.state.book.language}</h3>
-        </div>
-        <div>
-          <img src={this.state.book.image} />
-        </div>
-        <div>
-          <form onSubmit={this.handleFormSubmit}>
-            <label>Price</label>
-            <input
-              type="text"
-              name="price"
-              onChange={this.handleChange}
-              value={this.state.price}
-            />
-            <label>Used:</label>
-            <input
-              type="checkbox"
-              name="isUsed"
-              onChange={this.handleChange}
-              value={this.state.isUsed}
-            />
-            <button> Add Book </button>
-          </form>
+          <Card
+            style={{
+              height: "30rem",
+              width: "20rem",
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Card.Img variant="top" src={this.state.book.image} />
+            <Card.Body>
+              <Card.Title>{this.state.book.title}</Card.Title>
+              <Card.Text
+                style={{ width: "30rem" }}
+                dangerouslySetInnerHTML={{
+                  __html: this.state.book.description,
+                }}
+              ></Card.Text>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>{this.state.book.published}</ListGroupItem>
+              <ListGroupItem>{this.state.book.publisher}</ListGroupItem>
+              <ListGroupItem>
+                <strong>ISBN</strong> {this.state.book.isbn}
+              </ListGroupItem>
+              <ListGroupItem>
+                <form onSubmit={this.handleFormSubmit}>
+                  <label>Price</label>
+                  <input
+                    type="text"
+                    name="price"
+                    onChange={this.handleChange}
+                    value={this.state.price}
+                  />
+                  <hr/>
+                  <label>Used:</label>
+                  <input
+                    type="checkbox"
+                    name="isUsed"
+                    onChange={this.handleChange}
+                    value={this.state.isUsed}
+                  />
+                  <button> Add Book </button>
+                </form>
+              </ListGroupItem>
+            </ListGroup>
+          </Card>
         </div>
       </div>
     );
