@@ -40,7 +40,7 @@ class UserDetails extends React.Component {
               <Link to={`/books/${book.ISBN}`}>
                 <div>
                   {" "}
-                  - {book.title} <img src={book.image}></img>{" "}
+                   {book.title} <img src={book.image}></img>{" "}
                 </div>
               </Link>
             </div>

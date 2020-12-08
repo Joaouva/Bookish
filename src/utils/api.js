@@ -25,7 +25,7 @@ class BooksService {
   }
 
   editBook(updateBook) {
-    return this.service.put(`/books/${updateBook.isbn}`, updateBook);
+    return this.service.put(`/books/${updateBook.ISBN}`, updateBook);
   }
 }
 
