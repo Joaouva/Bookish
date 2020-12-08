@@ -38,5 +38,10 @@ class BooksFromDb {
 	getBookById(id) {
 		return this.service.get(`/books/editbook/${id}`);
 	}
+
+	deleteBook(id) {
+		return this.service.delete(`/book/delete/${id}`);
+	  }
+	
 }
 export default BooksFromDb;
