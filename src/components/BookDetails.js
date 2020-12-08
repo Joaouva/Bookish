@@ -19,7 +19,6 @@ class BookDetails extends React.Component {
   componentDidMount() {
     const booksService = new BooksService();
     const isbn = this.props.match.params.isbn;
-    debugger;
     booksService.getBookByIsbn(isbn).then((response) => {
       this.setState({
         title: response.data.title,
