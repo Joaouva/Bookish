@@ -1,6 +1,6 @@
 //Edit book component can only change price and grade!
 
-import React from 'react';
+import React from "react";
 import BooksFromDb from "../utils/bd";
 import { withRouter } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -28,12 +28,12 @@ class EditBook extends React.Component {
 		});
 	}
 
-	handleChange = (event) => {
-		let { name, value } = event.target;
-		this.setState({
-			[name]: value,
-		});
-	};
+  handleChange = (event) => {
+    let { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  };
 
 	handleFormSubmit = (event) => {
 		event.preventDefault();

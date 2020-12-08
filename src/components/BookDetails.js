@@ -64,6 +64,8 @@ class BookDetails extends React.Component {
         <div>
           <img className="bookImage" src={this.state.image} alt="bookcover" />
         </div>
+<<<<<<< HEAD
+=======
         <div>
           <button onClick={() => this.handleProjectDelete(this.state.isbn)}>
             Delete
@@ -77,7 +79,17 @@ class BookDetails extends React.Component {
           >
             Edit Project
           </button>
+          <button class="snipcart-add-item"
+  data-item-id={this.state.isbn}
+  data-item-price={this.state.price}
+  data-item-url="/paintings/starry-night"
+  data-item-description={this.state.description}
+  data-item-image={this.state.image}
+  data-item-name={this.state.title}>
+  Add to cart
+</button>
         </div>
+>>>>>>> 43e7ac292d33fc99fc5c1c80b1fa299accdbb4ba
       </div>
     ) : (
       <div>Loading</div>
