@@ -57,15 +57,6 @@ class BookDetails extends React.Component {
         <div>
           <img className="bookImage" src={this.state.image} alt="bookcover" />
         </div>
-<<<<<<< HEAD
-
-=======
-    <div>
-          <button onClick={() => this.handleProjectDelete(this.state.isbn)}>
-            Delete
-          </button>
-        </div>
->>>>>>> 3349b4456d564b0ec37405506593eef1bba4c875
        
         <div>
           <button
