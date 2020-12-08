@@ -77,6 +77,15 @@ class BookDetails extends React.Component {
           >
             Edit Project
           </button>
+          <button class="snipcart-add-item"
+  data-item-id={this.state.isbn}
+  data-item-price={this.state.price}
+  data-item-url="/paintings/starry-night"
+  data-item-description={this.state.description}
+  data-item-image={this.state.image}
+  data-item-name={this.state.title}>
+  Add to cart
+</button>
         </div>
       </div>
     ) : (
