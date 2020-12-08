@@ -3,6 +3,12 @@ import BooksService from "../utils/api";
 import { withRouter } from "react-router-dom";
 import { toast } from "react-toastify";
 import Spinner from "react-bootstrap/Spinner";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
+import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 class BookDetails extends React.Component {
   state = {
     title: "",
@@ -43,6 +49,65 @@ class BookDetails extends React.Component {
   render() {
     return this.state.price ? (
       <div>
+        <Jumbotron fluid>
+          <Container>
+            <h1>{this.state.title}</h1>
+            <h3>{this.state.author}</h3>
+          </Container>
+        </Jumbotron>
+        <Card style={{ width: "100%" }}>
+          <Card.Body>
+            <Card.Text>
+              <Row>
+                <Col>
+                  <Card.Img variant="top" src={this.state.image} />
+                </Col>
+                <Col>
+                  <h4>
+                    {" "}
+                    Published by: {this.state.publisher} in{" "}
+                    {this.state.published}{" "}
+                  </h4>
+                  <hr/>
+                  <h5> ISBN Code: {this.state.isbn}</h5>
+                  <h5>Language: {this.state.language}</h5>
+                  <h5> Description:</h5>
+                  <p
+                    dangerouslySetInnerHTML={{ __html: this.state.description }}
+                  />
+                  <p> Price: {this.state.price} €</p>
+                  <p>Book State: {this.state.isUsed ? "Used" : "New"} </p>
+                  <div>
+                    <button
+                      class="snipcart-add-item"
+                      data-item-id={this.state.isbn}
+                      data-item-price={this.state.price}
+                      data-item-url="/paintings/starry-night"
+                      data-item-description={this.state.description}
+                      data-item-image={this.state.image}
+                      data-item-name={this.state.title}
+                    >
+                      Buy this book!
+                    </button>
+                  </div>
+                </Col>
+              </Row>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </div>
+    ) : (
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    );
+  }
+}
+
+export default withRouter(BookDetails);
+
+/*
+<div>
         <div className="book-container">
           <h2>{this.state.title}</h2>
           <h3>{this.state.author}</h3>
@@ -72,12 +137,5 @@ class BookDetails extends React.Component {
           </button>
         </div>
       </div>
-    ) : (
-      <Spinner animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner>
-    );
-  }
-}
 
-export default withRouter(BookDetails);
+      */
