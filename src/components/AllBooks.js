@@ -3,6 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BooksFromBd from "../utils/bd";
 import BooksService from "../utils/api";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import CardDeck from "react-bootstrap/CardDeck";
 
 class GetBooksFromBd extends React.Component {
   state = {
@@ -57,13 +60,25 @@ class GetBooksFromBd extends React.Component {
         <div>
           {this.state.filteredBooks.map((book, index) => {
             return (
-              <div key={index}>
-                <Link to={`/books/${book.ISBN}`}>
-                  <img src={book.image}></img>
-                  <h1>{book.title}</h1>
-                </Link>
-              </div>
-            );
+				<div key={index}>
+					<CardDeck>
+						<Card>
+							<Card.Img variant="top" src={book.image} />
+							<Card.Body>
+								<Card.Title>{book.title}</Card.Title>
+							</Card.Body>
+							<Card.Footer>
+								<Link to={`/books/${book.ISBN}`}>
+									<Button variant="primary">View Book</Button>
+								</Link>
+								<small className="text-muted">
+									Last updated 3 mins ago
+								</small>
+							</Card.Footer>
+						</Card>
+					</CardDeck>
+				</div>
+			);
           })}
         </div>
       </div>
@@ -72,3 +87,5 @@ class GetBooksFromBd extends React.Component {
 }
 
 export default GetBooksFromBd;
+
+
