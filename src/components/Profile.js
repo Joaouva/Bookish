@@ -43,12 +43,11 @@ class Profile extends React.Component {
             return (
               <div key={index}>
                 <Link to={`/editbook/${book._id}`}> {book.title} </Link>
-                <h4>Price: {this.state.books.price}</h4>
+                <h4>Price: {book.price}</h4>
               </div>
             );
           })}
         </div>
-     
       </div>
     );
   }

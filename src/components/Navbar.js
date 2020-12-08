@@ -60,7 +60,7 @@ class Navbar extends React.Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="/login-google">
+                <NavLink exact to="/auth/google">
                   Login with Google
                 </NavLink>
               </li>
