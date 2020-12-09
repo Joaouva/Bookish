@@ -50,8 +50,9 @@ class GetBooksFromBd extends React.Component {
     return (
       <div>
         <div>
-          <label>Search For Books:</label>
-          <input
+          <label></label>
+          <input className="search-bar"
+            placeholder="Search for your book"
             type="text"
             name="search"
             onChange={this.handleChange}
@@ -66,7 +67,7 @@ class GetBooksFromBd extends React.Component {
                   <Card className="allbooks">
                     <Link to={`/books/${book.ISBN}`}>
                       {" "}
-                      <Card.Img variant="top" src={book.image} />
+                      <Card.Img variant="top" src={book.image} style={{height:"21rem"}}/>
                     </Link>
                     {/* <Card.Body>
                       <Card.Title>{book.price}</Card.Title>

@@ -47,8 +47,6 @@
   align-items: center;
 }
 
-
-
 .card {
   width: 225px;
   margin: 25px;
@@ -59,4 +57,27 @@
   width: 225px;
   margin: 25px;
   height: 350px;
+  border: 7px solid rgb(70, 69, 69) !important;
+}
+.bookish-logo {
+  font-family: "Abril Fatface";
+  font-size: 50px !important;
+}
+
+.bookish-navbar {
+  margin-bottom: 2%;
+}
+.navbar-links {
+  margin-left: 75%;
+}
+body {
+  background-color: lightgray !important;
+}
+.search-bar {
+  border: 5px solid rgb(70, 69, 69) !important;
+  border-radius: 20px;
+  padding: 2px 200px;
+  outline: none;
+  box-shadow: 5px 5px #888888;
+  margin-bottom: 2%;
 }

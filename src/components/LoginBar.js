@@ -21,11 +21,19 @@ class LoginBar extends React.Component {
     if (this.props.loggedInUser) {
       return (
         <div>
-          <Navbar className="navbaruser" expand="lg">
-            <Navbar.Brand href="/">Home</Navbar.Brand>
+          <Navbar
+            className="bookish-navbar"
+            sticky="top"
+            bg="dark"
+            variant="dark"
+            expand="lg"
+          >
+            <Navbar.Brand className="bookish-logo" href="/">
+              Bookish
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto navbarleft">
+              <Nav className="navbar-links">
                 <Nav.Link href="/addbook">Add new book</Nav.Link>
                 <Nav.Link href={`/profile/${this.props.loggedInUser._id}`}>
                   Profile
@@ -41,8 +49,17 @@ class LoginBar extends React.Component {
       return (
         <div>
           <nav>
-            <Navbar bg="light" expand="lg">
-              <Navbar.Brand href="/login">Login</Navbar.Brand>
+            <Navbar
+              className="bookish-navbar"
+              bg="dark"
+              variant="dark"
+              sticky="top"
+              expand="lg"
+            >
+              <Navbar.Brand className="bookish-logo" href="/">
+                Bookish
+              </Navbar.Brand>
+              <Nav.Link href="/login">Login</Nav.Link>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
