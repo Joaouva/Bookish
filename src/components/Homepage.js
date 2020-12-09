@@ -12,7 +12,7 @@ function Homepage() {
     <div>
       <div>
         <Carousel>
-          <Carousel.Item interval={1000}>
+          <Carousel.Item interval={3000}>
             <img
               width={900}
               height={500}
@@ -25,7 +25,7 @@ function Homepage() {
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item interval={500}>
+          <Carousel.Item interval={3000}>
             <img
               width={900}
               height={500}
