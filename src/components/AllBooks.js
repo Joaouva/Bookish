@@ -6,7 +6,7 @@ import BooksService from "../utils/api";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardDeck from "react-bootstrap/CardDeck";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, CardGroup } from "react-bootstrap";
 import Badge from "react-bootstrap/Badge";
 class GetBooksFromBd extends React.Component {
   state = {
@@ -48,51 +48,38 @@ class GetBooksFromBd extends React.Component {
 
   render() {
     return (
-		<div>
-			<div>
-				<label>Search For Books:</label>
-				<input
-					type="text"
-					name="search"
-					onChange={this.handleChange}
-					value={this.state.search}
-				/>
-			</div>
-			<Container>
-          <CardDeck>
-					{this.state.filteredBooks.map((book, index) => {
-						return (
-							<div key={index}>
-								<Card style={{ width: "20rem" }}>
-									<Card.Img
-										variant="top"
-										src={book.image}
-										style={{ height: "30rem" }}
-									>
-									</Card.Img>
-									<Card.Body>
-										<Card.Title style={{ height: "5rem" }}>
-											<h3>{book.title}</h3>
-										</Card.Title>
-									</Card.Body>
-									<Card.Footer>
-										<Link to={`/books/${book.ISBN}`}>
-											<Button variant="primary">
-												View Book
-											</Button>
-										</Link>
-									</Card.Footer>
-								</Card>
-							</div>
-						);
-					})}
-				</CardDeck>
-			</Container>
-		</div>
-	);
+      <div>
+        <div>
+          <label>Search For Books:</label>
+          <input
+            type="text"
+            name="search"
+            onChange={this.handleChange}
+            value={this.state.search}
+          />
+        </div>
+        <Container>
+          <CardGroup>
+            <div className="books-wrapper">
+              {this.state.filteredBooks.map((book, index) => {
+                return (
+                  <Card className="allbooks">
+                    <Link to={`/books/${book.ISBN}`}>
+                      {" "}
+                      <Card.Img variant="top" src={book.image} />
+                    </Link>
+                    <Card.Body>
+                      <Card.Title>{book.title}</Card.Title>
+                    </Card.Body>
+                  </Card>
+                );
+              })}
+            </div>
+          </CardGroup>
+        </Container>
+      </div>
+    );
   }
 }
 
 export default GetBooksFromBd;
-
-

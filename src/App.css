@@ -52,5 +52,19 @@
 .card {
   width: 225px;
   margin: 25px;
+<<<<<<< HEAD
   height: fit-content;
+=======
+<<<<<<< HEAD
+  height: 550px;
+=======
+  height: 500px;
+>>>>>>> 88af4b80dd7f16a6b7b950afae75224207f3f255
+>>>>>>> cd60d03d32e0c623a36f1bb282812423ff7d1117
+}
+
+.allbooks {
+  width: 225px;
+  margin: 25px;
+  height: 350px;
 }
