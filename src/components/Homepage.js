@@ -30,11 +30,7 @@ function Homepage() {
               width={900}
               height={500}
               className="d-block w-100"
-<<<<<<< HEAD
-              src="../../images/books.jpg"
-=======
               src="../../images/libraries.jpg"
->>>>>>> 66084344b4759521ea32a1fc41f45bbe6a0d4ef1
               alt="Third slide"
             />
             <Carousel.Caption>
@@ -42,22 +38,6 @@ function Homepage() {
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
-<<<<<<< HEAD
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="../../images/books.jpg"
-              alt="Third slide"
-            />
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-=======
->>>>>>> 66084344b4759521ea32a1fc41f45bbe6a0d4ef1
         </Carousel>
       </div>
       <div>
