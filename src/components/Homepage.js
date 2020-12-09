@@ -5,17 +5,17 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Carousel from "react-bootstrap/Carousel"
+import Carousel from "react-bootstrap/Carousel";
 
 function Homepage() {
   return (
     <div>
-      <div>
+      <div style={{ marginTop: "-2%" }}>
         <Carousel>
           <Carousel.Item interval={3000}>
             <img
-              width={900}
-              height={500}
+              width={300}
+              height={300}
               className="d-block w-100 slide-image"
               src="../../images/allbooks.jpg"
               alt="First slide"
@@ -27,8 +27,8 @@ function Homepage() {
           </Carousel.Item>
           <Carousel.Item interval={3000}>
             <img
-              width={900}
-              height={500}
+              width={300}
+              height={300}
               className="d-block w-100"
               src="../../images/libraries.jpg"
               alt="Third slide"
@@ -40,35 +40,38 @@ function Homepage() {
           </Carousel.Item>
         </Carousel>
       </div>
-      <Container>
-        <Row className="containerHomepage">
-          <Col className="colHomepage">
-            {" "}
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title>Libraries</Card.Title>
-                <Card.Text>
-                  Search for all the libraries currently selling in our website!
-                </Card.Text>
-                <Card.Link href="/userfeed">Click here</Card.Link>
-              </Card.Body>
-            </Card>
-          </Col>
+      <div>
+        <Container>
+          <Row className="containerHomepage">
+            <Col className="colHomepage">
+              {" "}
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title>Libraries</Card.Title>
+                  <Card.Text>
+                    Search for all the libraries currently selling in our
+                    website!
+                  </Card.Text>
+                  <Card.Link href="/userfeed">Click here</Card.Link>
+                </Card.Body>
+              </Card>
+            </Col>
 
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title>Books</Card.Title>
-                <Card.Text>
-                  Search for all the books that are currently being sold in our
-                  website!
-                </Card.Text>
-                <Card.Link href="/bookfeed">Click here</Card.Link>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title>Books</Card.Title>
+                  <Card.Text>
+                    Search for all the books that are currently being sold in
+                    our website!
+                  </Card.Text>
+                  <Card.Link href="/bookfeed">Click here</Card.Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 }

@@ -62,7 +62,7 @@ class EditBook extends React.Component {
     return (
       <div>
         <h1> Edit your book: </h1>
-        <Card style={{ width: "19rem" }}>
+        <Card style={{ width: "19rem" }} className="edit-book">
           <Card.Img variant="top" src={this.state.image} />
           <Card.Body>
             <Card.Title> {this.state.title} </Card.Title>
@@ -91,5 +91,3 @@ class EditBook extends React.Component {
 }
 
 export default withRouter(EditBook);
-
-      
