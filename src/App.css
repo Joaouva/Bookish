@@ -43,7 +43,7 @@
   width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
-    justify-content: center;
+  justify-content: center;
   align-items: center;
 }
 
@@ -52,7 +52,11 @@
 .card {
   width: 225px;
   margin: 25px;
+<<<<<<< HEAD
   height: 550px;
+=======
+  height: 500px;
+>>>>>>> 88af4b80dd7f16a6b7b950afae75224207f3f255
 }
 
 .allbooks {
