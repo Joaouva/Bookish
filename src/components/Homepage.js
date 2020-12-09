@@ -10,8 +10,8 @@ function Homepage() {
   return (
     <div>
       <Container>
-        <Row>
-          <Col>
+        <Row className="containerHomepage">
+          <Col className="colHomepage">
             {" "}
             <Card style={{ width: "18rem" }}>
               <Card.Body>
