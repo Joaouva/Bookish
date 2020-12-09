@@ -37,24 +37,19 @@
   }
 }
 
-
-.containerHomepage {
-  background: cadetblue;
-  padding: 25px;
+.books-wrapper {
+  float: left;
+  display: inline-flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+    justify-content: center;
+  align-items: center;
 }
 
-.colHomepage {
-  margin-left: 12vw;
-  margin-right: 12vw;
-  flex-grow: 0 !important;
-}
 
-.navbarleft{
-  display: flex;
-  margin-left: 74% !important;
 
-}
-
-.navbaruser {
-  background-color: rgba(228, 207, 207, 0);
+.card {
+  width: 225px;
+  margin: 25px;
 }

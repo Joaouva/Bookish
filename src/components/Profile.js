@@ -83,26 +83,28 @@ class Profile extends React.Component {
           </Container>
           <div>
             <h2>Your books:</h2>
-            <CardGroup>
-              {this.state.books.map((book, index) => {
-                return (
-                  <div key={index}>
-                    <Card>
-                      <Card.Img variant="top" width="500" src={book.image} />
-                      <Card.Body>
-                        <Card.Title>{book.title}</Card.Title>
-                        <Card.Text>Asking price: {book.price}</Card.Text>
-                      </Card.Body>
-                      <Card.Footer>
-                        <Link to={`/editbook/${book._id}`}>
-                          <Button variant="primary">Edit Book</Button>
-                        </Link>
-                      </Card.Footer>
-                    </Card>
-                  </div>
-                );
-              })}
-            </CardGroup>
+            <Container>
+              <CardGroup>
+                <div className="books-wrapper">
+                  {this.state.books.map((book, index) => {
+                    return (
+                      <Card>
+                        <Card.Img variant="top" src={book.image} />
+                        <Card.Body>
+                          <Card.Title>{book.title}</Card.Title>
+                          <Card.Text>Asking price: {book.price}</Card.Text>
+                        </Card.Body>
+                        <Card.Footer>
+                          <Link to={`/editbook/${book._id}`}>
+                            <Button variant="primary">Edit Book</Button>
+                          </Link>
+                        </Card.Footer>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </CardGroup>
+            </Container>
           </div>
         </div>
       </div>
