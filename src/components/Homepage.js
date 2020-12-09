@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Carousel from "react-bootstrap/Carousel"
+import Carousel from "react-bootstrap/Carousel";
 
 function Homepage() {
   return (
@@ -14,8 +14,8 @@ function Homepage() {
         <Carousel>
           <Carousel.Item interval={1000}>
             <img
-              className="d-block w-100 slide-image"
-              src="../../images/allbooks.jpg"
+              className="d-block w-100"
+              src="../../images/books.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -26,7 +26,7 @@ function Homepage() {
           <Carousel.Item interval={500}>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=282c34"
+              src="../../images/books.jpg"
               alt="Third slide"
             />
             <Carousel.Caption>
@@ -37,7 +37,7 @@ function Homepage() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=20232a"
+              src="../../images/books.jpg"
               alt="Third slide"
             />
             <Carousel.Caption>
@@ -49,35 +49,38 @@ function Homepage() {
           </Carousel.Item>
         </Carousel>
       </div>
-      <Container>
-        <Row className="containerHomepage">
-          <Col className="colHomepage">
-            {" "}
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title>Libraries</Card.Title>
-                <Card.Text>
-                  Search for all the libraries currently selling in our website!
-                </Card.Text>
-                <Card.Link href="/userfeed">Click here</Card.Link>
-              </Card.Body>
-            </Card>
-          </Col>
+      <div>
+        <Container>
+          <Row className="containerHomepage">
+            <Col className="colHomepage">
+              {" "}
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title>Libraries</Card.Title>
+                  <Card.Text>
+                    Search for all the libraries currently selling in our
+                    website!
+                  </Card.Text>
+                  <Card.Link href="/userfeed">Click here</Card.Link>
+                </Card.Body>
+              </Card>
+            </Col>
 
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title>Books</Card.Title>
-                <Card.Text>
-                  Search for all the books that are currently being sold in our
-                  website!
-                </Card.Text>
-                <Card.Link href="/bookfeed">Click here</Card.Link>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+            <Col>
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title>Books</Card.Title>
+                  <Card.Text>
+                    Search for all the books that are currently being sold in
+                    our website!
+                  </Card.Text>
+                  <Card.Link href="/bookfeed">Click here</Card.Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 }
