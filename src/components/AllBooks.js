@@ -47,56 +47,47 @@ class GetBooksFromBd extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <label>Search For Books:</label>
-          <input
-            type="text"
-            name="search"
-            onChange={this.handleChange}
-            value={this.state.search}
-          />
-        </div>
-        <div>
-          {this.state.filteredBooks.map((book, index) => {
-            return (
-				<Container>
-					<div key={index}>
-						<Row>
-							<Col>
-								<CardDeck
-									style={{
-										width: "20rem",
-									}}
-								>
-									<Card>
-										<Card.Img
-											variant="top"
-											src={book.image}
-										/>
-										<Card.Body>
-											<Card.Title>
-												{book.title}
-											</Card.Title>
-										</Card.Body>
-										<Card.Footer>
-											<Link to={`/books/${book.ISBN}`}>
-												<Button variant="primary">
-													View Book
-												</Button>
-											</Link>
-										</Card.Footer>
-									</Card>
-								</CardDeck>
-							</Col>
-						</Row>
-					</div>
-				</Container>
-			);
-          })}
-        </div>
-      </div>
-    );
+		<div>
+			<div>
+				<label>Search For Books:</label>
+				<input
+					type="text"
+					name="search"
+					onChange={this.handleChange}
+					value={this.state.search}
+				/>
+			</div>
+			<Container>
+          <CardDeck>
+					{this.state.filteredBooks.map((book, index) => {
+						return (
+							<div key={index}>
+								<Card style={{ width: "20rem" }}>
+									<Card.Img
+										variant="top"
+										src={book.image}
+										style={{ height: "30rem" }}
+									/>
+									<Card.Body>
+										<Card.Title style={{ height: "5rem" }}>
+											{book.title}
+										</Card.Title>
+									</Card.Body>
+									<Card.Footer>
+										<Link to={`/books/${book.ISBN}`}>
+											<Button variant="primary">
+												View Book
+											</Button>
+										</Link>
+									</Card.Footer>
+								</Card>
+							</div>
+						);
+					})}
+				</CardDeck>
+			</Container>
+		</div>
+	);
   }
 }
 

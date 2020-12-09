@@ -23,41 +23,40 @@ class AllBookShops extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.state.booksshops.map((booksshops, index) => {
-          return (
-				<div key={index}>
-					<CardDeck
-						style={{
-							width: "20rem",
-						}}
-					>
-						<Card>
-							<Card.Img
-								variant="top"
-								src="https://lh3.googleusercontent.com/proxy/1gKpVxdnofWhFwEREJFmaGsnOPYXSeZgSFxFc0EphEqNyY8ZXGJvVv4GhJKRahezm1mV6TqvwJlos8XJA1OApywabqcN38_epZMX8YDpZZxIpcMl99is1CA3T4g"
-							/>
-							<Card.Body>
-								<Card.Title>{booksshops.username}</Card.Title>
-								<Card.Text>{booksshops.about}</Card.Text>
-							</Card.Body>
-							<Card.Footer>
-								<small className="text-muted">
-									{booksshops.city}
-								</small>
-							</Card.Footer>
-							<Link to={`/allbookshops/${booksshops._id}`}>
-								<Button variant="primary">
-									View Book Shop
-								</Button>
-							</Link>
-						</Card>
-					</CardDeck>
-				</div>
-			);
-        })}
-            </div>
-          );
+		<div>
+			<CardDeck>
+				{this.state.booksshops.map((booksshops, index) => {
+					return (
+						<div key={index}>
+							<Card style={{ width: "10rem" }}>
+								<Card.Img
+									variant="top"
+									src="https://lh3.googleusercontent.com/proxy/1gKpVxdnofWhFwEREJFmaGsnOPYXSeZgSFxFc0EphEqNyY8ZXGJvVv4GhJKRahezm1mV6TqvwJlos8XJA1OApywabqcN38_epZMX8YDpZZxIpcMl99is1CA3T4g"
+									style={{ height: "10rem" }}
+								/>
+								<Card.Body>
+									<Card.Title style={{ height: "3rem" }}>
+										{booksshops.username}
+									</Card.Title>
+									<Card.Text>{booksshops.about}</Card.Text>
+								</Card.Body>
+								<Card.Footer>
+									<small className="text-muted">
+										{booksshops.city}
+									</small>
+								</Card.Footer>
+								<Link to={`/allbookshops/${booksshops._id}`}>
+									<Button variant="primary">
+										View Book Shop
+									</Button>
+								</Link>
+							</Card>
+						</div>
+					);
+				})}
+			</CardDeck>
+		</div>
+	);
         }
 }
 
