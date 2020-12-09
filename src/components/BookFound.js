@@ -4,9 +4,9 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import BooksService from "../utils/api";
 import BooksFromDb from "../utils/bd";
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import ListGroupItem from 'react-bootstrap/ListGroupItem';
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
+import ListGroupItem from "react-bootstrap/ListGroupItem";
 
 class GetBooksFromApi extends React.Component {
   state = {
@@ -39,14 +39,34 @@ class GetBooksFromApi extends React.Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const booksFromDb = new BooksFromDb();
-  //  const newBook = {title: this.state.book.title, }
-  const {title, author, description, published, publisher, language, image, isbn} = this.state.book
-  const { price, isUsed } = this.state;
+    //  const newBook = {title: this.state.book.title, }
+    const {
+      title,
+      author,
+      description,
+      published,
+      publisher,
+      language,
+      image,
+      isbn,
+    } = this.state.book;
+    const { price, isUsed } = this.state;
 
     booksFromDb
-      .addBook({title, author, description, published, publisher, language, image, isUsed, isbn, price})
+      .addBook({
+        title,
+        author,
+        description,
+        published,
+        publisher,
+        language,
+        image,
+        isUsed,
+        isbn,
+        price,
+      })
       .then(() => {
-        this.props.history.push(`/profile`);
+        this.props.history.push(`/profile/${this.props.loggedInUser._id}`);
       });
   };
   render() {
@@ -87,7 +107,7 @@ class GetBooksFromApi extends React.Component {
                     onChange={this.handleChange}
                     value={this.state.price}
                   />
-                  <hr/>
+                  <hr />
                   <label>Used:</label>
                   <input
                     type="checkbox"

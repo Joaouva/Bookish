@@ -21,15 +21,16 @@ class LoginBar extends React.Component {
     if (this.props.loggedInUser) {
       return (
         <div>
-          <Navbar bg="light" expand="lg">
+          <Navbar className="navbaruser" expand="lg">
             <Navbar.Brand href="/">Home</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto">
+              <Nav className="mr-auto navbarleft">
                 <Nav.Link href="/addbook">Add new book</Nav.Link>
                 <Nav.Link href={`/profile/${this.props.loggedInUser._id}`}>
                   Profile
                 </Nav.Link>
+
                 <Button onClick={this.logoutUser}>Log Out</Button>
               </Nav>
             </Navbar.Collapse>
