@@ -52,4 +52,11 @@
 .card {
   width: 225px;
   margin: 25px;
+  height: 550px;
+}
+
+.allbooks {
+  width: 225px;
+  margin: 25px;
+  height: 350px;
 }
