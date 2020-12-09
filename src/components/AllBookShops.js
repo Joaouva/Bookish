@@ -5,14 +5,12 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardDeck from "react-bootstrap/CardDeck";
 
-
 class AllBookShops extends React.Component {
   state = {
     booksshops: [],
   };
 
   componentDidMount() {
-
     const booksFromDb = new BooksFromDb();
     booksFromDb.getAllBookshops().then((response) => {
       this.setState({
@@ -23,46 +21,39 @@ class AllBookShops extends React.Component {
 
   render() {
     return (
-		<div>
-			<CardDeck>
-				{this.state.booksshops.map((booksshops, index) => {
-					return (
-						<div key={index}>
-							<Card style={{ width: "15rem", height: "25rem"}}>
-								<Card.Img
-									variant="top"
-									src="https://lh3.googleusercontent.com/proxy/1gKpVxdnofWhFwEREJFmaGsnOPYXSeZgSFxFc0EphEqNyY8ZXGJvVv4GhJKRahezm1mV6TqvwJlos8XJA1OApywabqcN38_epZMX8YDpZZxIpcMl99is1CA3T4g"
-									style={{ height: "10rem", width: "10rem" }}
-								/>
-								<Card.Body>
-									<Card.Title>
-										{booksshops.username}
-									</Card.Title>
-									<Card.Text>{booksshops.about}</Card.Text>
-								</Card.Body>
-								<Card.Footer>
-									<small className="text-muted">
-										{booksshops.city}
-									</small>
-								</Card.Footer>
-								<Link to={`/allbookshops/${booksshops._id}`}>
-									<Button variant="primary">
-										View Book Shop
-									</Button>
-								</Link>
-							</Card>
-						</div>
-					);
-				})}
-			</CardDeck>
-		</div>
-	);
-        }
+      <div>
+	  <h1> Get to know all of our Bookshops </h1>
+        <CardDeck className="cards-from-allbookshops">
+          {this.state.booksshops.map((booksshops, index) => {
+            return (
+              <div key={index}>
+                <Card
+                  style={{ width: "15rem", height: "25rem" }}
+                  className="allbooks"
+                >
+                  <Card.Img
+                    variant="top"
+                    src="../../images/shelf.jpeg"
+                    style={{ height: "10rem", width: "14em" }}
+                  />
+                  <Card.Body>
+                    <Card.Title>{booksshops.username}</Card.Title>
+                    <Card.Text>{booksshops.about}</Card.Text>
+                    <small className="text-muted">{booksshops.city}</small>
+                  </Card.Body>
+                </Card>
+                <Link to={`/allbookshops/${booksshops._id}`}>
+                  <Button variant="dark" style={{ marginTop: "4px" }}>
+                    View Book Shop
+                  </Button>
+                </Link>
+              </div>
+            );
+          })}
+        </CardDeck>
+      </div>
+    );
+  }
 }
 
-
 export default AllBookShops;
-
-
-
-
