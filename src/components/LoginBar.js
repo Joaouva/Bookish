@@ -59,10 +59,11 @@ class LoginBar extends React.Component {
               <Navbar.Brand className="bookish-logo" href="/">
                 Bookish
               </Navbar.Brand>
-              <Nav.Link href="/login">Login</Nav.Link>
+
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
+                <Nav className="navbar-links">
+                  <Nav.Link href="/login">Login</Nav.Link>
                   <Nav.Link href="/signup">Signup</Nav.Link>
                   <Nav.Link href="/auth/google">Login with Google</Nav.Link>
                 </Nav>

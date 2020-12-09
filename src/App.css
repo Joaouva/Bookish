@@ -62,7 +62,7 @@
   margin-bottom: 2%;
 }
 .navbar-links {
-  margin-left: 75%;
+  margin-left: 68%;
 }
 body {
   background-color: lightgray !important;
@@ -76,9 +76,45 @@ body {
   margin-bottom: 2%;
 }
 @media (max-width: 900px) {
-    .carousel {
-      width: auto;
-      height: auto;
-   
-    }
+  .carousel {
+    width: auto;
+    height: auto;
+  }
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  right: 0 !important;
+  left: 32% !important;
+  width: fit-content;
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.carousel-indicators {
+  display: none !important;
+  width: 0px !important;
+  color: black !important;
+}
+
+.card-homepage {
+  background-color: rgb(70, 69, 69);
+  color: white;
+}
+
+.links {
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+}
+
+.links:hover {
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+}
+
+.snipcart-add-item {
+  background-color: black;
 }

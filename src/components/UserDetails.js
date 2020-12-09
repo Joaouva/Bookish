@@ -42,31 +42,32 @@ class UserDetails extends React.Component {
 				<CardDeck>
 					{this.state.books.map((book, index) => {
 						return (
-							<div key={index}>
-								<Card style={{ width: "20rem" }}>
-									<Card.Img
-										variant="top"
-										src={book.image}
-										style={{ height: "30rem" }}
-									></Card.Img>
-									<Card.Body>
-										<Card.Title style={{ height: "5rem" }}>
-											{book.title} <br></br>
-											<Button variant="danger">
-												€{book.price}.00
-											</Button>{" "}
-										</Card.Title>
-									</Card.Body>
-									<Card.Footer>
-										<Link to={`/books/${book.ISBN}`}>
-											<Button variant="primary">
-												View Book
-											</Button>
-										</Link>
-									</Card.Footer>
-								</Card>
-							</div>
-						);
+              <div key={index}>
+                <Card className="allbooks">
+                  <Link to={`/books/${book.ISBN}`}>
+                    <Card.Img
+                      variant="top"
+                      src={book.image}
+                      style={{ height: "21rem" }}
+                    ></Card.Img>
+                  </Link>
+                </Card>
+                <div>
+                  <button
+                    bg="dark"
+                    class="snipcart-add-item"
+                    data-item-id={book.ISBN}
+                    data-item-price={book.price}
+                    data-item-url={`/books/${book.ISBN}`}
+                    data-item-description={book.description}
+                    data-item-image={book.image}
+                    data-item-name={book.title}
+                  >
+                    Buy this book!
+                  </button>
+                </div>
+              </div>
+            );
 					})}
 				</CardDeck>
 			</Container>
