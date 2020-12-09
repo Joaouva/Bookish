@@ -91,7 +91,7 @@ class BookDetails extends React.Component {
 										class="snipcart-add-item"
 										data-item-id={this.state.isbn}
 										data-item-price={this.state.price}
-										data-item-url="/paintings/starry-night"
+										data-item-url={`/books/${this.state.isbn}`}
 										data-item-description={
 											this.state.description
 										}
