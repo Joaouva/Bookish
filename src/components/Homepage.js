@@ -10,12 +10,12 @@ import Carousel from "react-bootstrap/Carousel";
 function Homepage() {
   return (
     <div>
-      <div>
+      <div style={{ marginTop: "-2%" }}>
         <Carousel>
-          <Carousel.Item interval={1000}>
+          <Carousel.Item interval={3000}>
             <img
-              width={900}
-              height={500}
+              width={300}
+              height={300}
               className="d-block w-100 slide-image"
               src="../../images/allbooks.jpg"
               alt="First slide"
@@ -27,8 +27,8 @@ function Homepage() {
           </Carousel.Item>
           <Carousel.Item interval={500}>
             <img
-              width={900}
-              height={500}
+              width={300}
+              height={300}
               className="d-block w-100"
               src="../../images/libraries.jpg"
               alt="Third slide"
