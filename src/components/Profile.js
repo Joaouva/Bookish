@@ -123,29 +123,26 @@ class Profile extends React.Component {
 								<div className="books-wrapper">
 									{this.state.books.map((book, index) => {
 										return (
-											<Card>
+											<Card className="allbooks">
 												<Card.Img
 													variant="top"
 													src={book.image}
+													style={{ height: "21rem" }}
 												/>
 												<Card.Body>
 													<Card.Title>
-														{book.title}
+														<Link
+															to={`/editbook/${book._id}`}
+														>
+															<Button variant="dark">
+																Edit Book
+															</Button>
+														</Link>
 													</Card.Title>
 													<Card.Text>
-														Asking price:{" "}
-														{book.price}
+														€{book.price}.00
 													</Card.Text>
 												</Card.Body>
-												<Card.Footer>
-													<Link
-														to={`/editbook/${book._id}`}
-													>
-														<Button variant="primary">
-															Edit Book
-														</Button>
-													</Link>
-												</Card.Footer>
 											</Card>
 										);
 									})}

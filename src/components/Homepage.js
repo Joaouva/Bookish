@@ -14,26 +14,35 @@ function Homepage() {
         <Carousel>
           <Carousel.Item interval={1000}>
             <img
-              className="d-block w-100"
-              src="../../images/books.jpg"
+              width={900}
+              height={500}
+              className="d-block w-100 slide-image"
+              src="../../images/allbooks.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
+              <h3>Our Books</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={500}>
             <img
+              width={900}
+              height={500}
               className="d-block w-100"
+<<<<<<< HEAD
               src="../../images/books.jpg"
+=======
+              src="../../images/libraries.jpg"
+>>>>>>> 66084344b4759521ea32a1fc41f45bbe6a0d4ef1
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h3>Second slide label</h3>
+              <h3>Our Bookshops</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
+<<<<<<< HEAD
           <Carousel.Item>
             <img
               className="d-block w-100"
@@ -47,6 +56,8 @@ function Homepage() {
               </p>
             </Carousel.Caption>
           </Carousel.Item>
+=======
+>>>>>>> 66084344b4759521ea32a1fc41f45bbe6a0d4ef1
         </Carousel>
       </div>
       <div>
