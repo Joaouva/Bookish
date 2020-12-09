@@ -32,7 +32,7 @@ class BooksFromDb {
 	//UVA CHANGES
 
 	editBook(id, price) {
-		return this.service.put(`/books/editbook/${id}`, {price});
+		return this.service.put(`/books/editbook/${id}`, { price });
 	}
 
 	getBookById(id) {
@@ -41,7 +41,10 @@ class BooksFromDb {
 
 	deleteBook(id) {
 		return this.service.delete(`/book/delete/${id}`);
-	  }
-	
+	}
+
+	updateUser(updateUser) {
+		return this.service.put(`/profile/${updateUser.id}`, { ...updateUser });
+	}
 }
 export default BooksFromDb;

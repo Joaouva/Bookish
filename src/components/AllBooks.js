@@ -68,9 +68,9 @@ class GetBooksFromBd extends React.Component {
                       {" "}
                       <Card.Img variant="top" src={book.image} />
                     </Link>
-                    <Card.Body>
-                      <Card.Title>{book.title}</Card.Title>
-                    </Card.Body>
+                    {/* <Card.Body>
+                      <Card.Title>{book.price}</Card.Title>
+                    </Card.Body> */}
                   </Card>
                 );
               })}
