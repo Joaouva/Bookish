@@ -78,6 +78,7 @@ class Profile extends React.Component {
                     placeholder={this.state.about}
                   />
                 </Form.Group>
+				<Button></Button>
               </Form>
             </div>
           </Container>
@@ -92,8 +93,13 @@ class Profile extends React.Component {
                         <Card.Img variant="top" src={book.image} />
                         <Card.Body>
                           <Card.Title>{book.title}</Card.Title>
-                          <Card.Text><strong>Price: </strong>{book.price}</Card.Text>
+                          <Card.Text>Asking price: {book.price}</Card.Text>
                         </Card.Body>
+                        <Card.Footer>
+                          <Link to={`/editbook/${book._id}`}>
+                            <Button variant="primary">Edit Book</Button>
+                          </Link>
+                        </Card.Footer>
                       </Card>
                     );
                   })}
