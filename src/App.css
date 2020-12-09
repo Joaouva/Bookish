@@ -43,7 +43,7 @@
   width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
-    justify-content: center;
+  justify-content: center;
   align-items: center;
 }
 
@@ -52,4 +52,5 @@
 .card {
   width: 225px;
   margin: 25px;
+  height: 500px;
 }
