@@ -28,14 +28,14 @@ class AllBookShops extends React.Component {
 				{this.state.booksshops.map((booksshops, index) => {
 					return (
 						<div key={index}>
-							<Card style={{ width: "10rem" }}>
+							<Card style={{ width: "15rem", height: "25rem"}}>
 								<Card.Img
 									variant="top"
 									src="https://lh3.googleusercontent.com/proxy/1gKpVxdnofWhFwEREJFmaGsnOPYXSeZgSFxFc0EphEqNyY8ZXGJvVv4GhJKRahezm1mV6TqvwJlos8XJA1OApywabqcN38_epZMX8YDpZZxIpcMl99is1CA3T4g"
-									style={{ height: "10rem" }}
+									style={{ height: "10rem", width: "10rem" }}
 								/>
 								<Card.Body>
-									<Card.Title style={{ height: "3rem" }}>
+									<Card.Title>
 										{booksshops.username}
 									</Card.Title>
 									<Card.Text>{booksshops.about}</Card.Text>

@@ -65,7 +65,7 @@ class Profile extends React.Component {
 			<div>
 				<div>
 					<h1>Welcome to your profile {this.state.username}</h1>
-					<Container>
+					<Container style={{ width: "20rem"}}>
 						<Row>
 							<Col xs={6} md={4}>
 								<Image
@@ -83,21 +83,21 @@ class Profile extends React.Component {
 										type="email"
 										name="username"
 										onChange={this.handleChange}
-										placeholder={this.state.username}
+										value={this.state.username}
 									/>
 									<Form.Label>Name</Form.Label>
 									<Form.Control
 										type="email"
 										name="email"
 										onChange={this.handleChange}
-										placeholder={this.state.name}
+										value={this.state.name}
 									/>
 									<Form.Label>City</Form.Label>
 									<Form.Control
 										type="email"
 										name="city"
+										value={this.state.city}
 										onChange={this.handleChange}
-										placeholder={this.state.city}
 									/>
 								</Form.Group>
 								<Form.Group controlId="exampleForm.ControlTextarea1">
@@ -107,7 +107,7 @@ class Profile extends React.Component {
 										name="about"
 										onChange={this.handleChange}
 										rows={3}
-										placeholder={this.state.about}
+										value={this.state.about}
 									/>
 								</Form.Group>
 								<Button onClick={this.handleFormSubmit}>
