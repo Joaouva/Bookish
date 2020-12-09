@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardDeck from "react-bootstrap/CardDeck";
 import { Container, Row, Col } from "react-bootstrap";
+import Badge from "react-bootstrap/Badge";
 class GetBooksFromBd extends React.Component {
   state = {
     books: [],
@@ -67,10 +68,11 @@ class GetBooksFromBd extends React.Component {
 										variant="top"
 										src={book.image}
 										style={{ height: "30rem" }}
-									/>
+									>
+									</Card.Img>
 									<Card.Body>
 										<Card.Title style={{ height: "5rem" }}>
-											{book.title}
+											<h3>{book.title}</h3>
 										</Card.Title>
 									</Card.Body>
 									<Card.Footer>
