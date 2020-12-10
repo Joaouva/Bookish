@@ -74,7 +74,12 @@ class LoginBar extends React.Component {
                 <Nav className="navbar-links">
                   <Nav.Link href="/login">Login</Nav.Link>
                   <Nav.Link href="/signup">Signup</Nav.Link>
-                  <Nav.Link href="/login-google">Login with Google</Nav.Link>
+                  <Nav.Link href="/login-google">
+                    <img
+                      style={{ height: "50px" }}
+                      src="../../images/google-logo.png"
+                    />
+                  </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
@@ -86,3 +91,5 @@ class LoginBar extends React.Component {
 }
 
 export default LoginBar;
+
+
