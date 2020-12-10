@@ -64,7 +64,7 @@ class GetBooksFromBd extends React.Component {
             <div className="books-wrapper">
               {this.state.filteredBooks.map((book, index) => {
                 return (
-                  <Card className="allbooks">
+                  <Card key={index} className="allbooks">
                     <Link to={`/books/${book.ISBN}`}>
                       {" "}
                       <Card.Img variant="top" src={book.image} style={{height:"21rem"}}/>
