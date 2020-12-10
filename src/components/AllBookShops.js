@@ -22,19 +22,24 @@ class AllBookShops extends React.Component {
   render() {
     return (
       <div>
-	  <h1> Get to know all of our Bookshops </h1>
+        <h1> Get to know all of our Bookshops </h1>
         <CardDeck className="cards-from-allbookshops">
           {this.state.booksshops.map((booksshops, index) => {
             return (
               <div key={index}>
                 <Card
-                  style={{ width: "15rem", height: "25rem", objectFit: "cover" }}
+                  style={{
+                    width: "15rem",
+                    height: "25rem",
+                    objectFit: "cover",
+                  }}
                   className="allbooks"
                 >
                   <Card.Img
                     className="bookshop-img"
                     variant="top"
                     src="../../images/shelf.jpeg"
+                    style={{ height: "10rem", width: "18vw" }}
                   />
                   <Card.Body>
                     <Card.Title>{booksshops.username}</Card.Title>
