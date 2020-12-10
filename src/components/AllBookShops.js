@@ -28,13 +28,13 @@ class AllBookShops extends React.Component {
             return (
               <div key={index}>
                 <Card
-                  style={{ width: "15rem", height: "25rem" }}
+                  style={{ width: "15rem", height: "25rem", objectFit: "cover" }}
                   className="allbooks"
                 >
                   <Card.Img
+                    className="bookshop-img"
                     variant="top"
                     src="../../images/shelf.jpeg"
-                    style={{ height: "10rem", width: "14em" }}
                   />
                   <Card.Body>
                     <Card.Title>{booksshops.username}</Card.Title>

@@ -145,7 +145,10 @@ body {
 
 
 .cards-from-allbookshops {
-  margin-left: 9% !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 50px;
 }
 
 .form-profile{
