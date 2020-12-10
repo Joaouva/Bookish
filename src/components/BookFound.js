@@ -71,64 +71,89 @@ class GetBooksFromApi extends React.Component {
   };
   render() {
     return (
-		<div>
-			<h3> Is this the book? </h3>
-			<div>
-				<Card
-					style={{
-						height: "30rem",
-						width: "20rem",
-						display: "flex",
-						flexDirection: "row",
-					}}
-				>
-					<Card.Img variant="top" src={this.state.book.image} />
-					<Card.Body>
-						<Card.Title>{this.state.book.title}</Card.Title>
-						<Card.Text
-							style={{ width: "30rem" }}
-							dangerouslySetInnerHTML={{
-								__html: this.state.book.description,
-							}}
-						></Card.Text>
-					</Card.Body>
-					<ListGroup className="list-group-flush">
-						<ListGroupItem>
-							{this.state.book.published}
-						</ListGroupItem>
-						<ListGroupItem>
-							{this.state.book.publisher}
-						</ListGroupItem>
-						<ListGroupItem>
-							<strong>ISBN</strong> {this.state.book.isbn}
-						</ListGroupItem>
-						<ListGroupItem>
-							<form onSubmit={this.handleFormSubmit}>
-								<label>Price</label>
-								<input
-									type="text"
-									name="price"
-									onChange={this.handleChange}
-									value={this.state.price}
-								/>
-								<hr />
-								<label>Used:</label>
-								<input
-									type="checkbox"
-									name="isUsed"
-									onChange={this.handleChange}
-									value={this.state.isUsed}
-								/>
-								<button onClick={this.handleFormSubmit}>
-									Add Book
-								</button>
-							</form>
-						</ListGroupItem>
-					</ListGroup>
-				</Card>
-			</div>
-		</div>
-	);
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h2
+          style={{
+            marginBottom: "3rem",
+            backgroundColor: "gray",
+            padding: "20px",
+            width: "100vw",
+            boxShadow: "5px 5px darkGray ",
+          }}
+        >
+          {" "}
+          <b> Is this the book?</b>
+        </h2>
+
+        <Card bg="secondary" text="white" style={{ width: "60vw" }}>
+          <Card.Header
+            style={{ fontSize: "2rem", marginTop: "2rem", fontWeight: "bold" }}
+          >
+            {this.state.book.title} <br />
+            <img
+              src={this.state.book.image}
+              style={{
+                marginTop: "2rem",
+                objectFit: "fill !important",
+                width: "50vw",
+              }}
+            />
+          </Card.Header>
+          <Card.Body>
+            <Card.Text
+              style={{ textAlign: "justify" }}
+              dangerouslySetInnerHTML={{
+                __html: this.state.book.description,
+              }}
+            ></Card.Text>
+            <Card.Text>
+              <ListGroup
+                style={{
+                  color: "black",
+                  marginTop: "10px",
+                  marginBottom: "30px",
+                }}
+              >
+                <ListGroupItem>{this.state.book.publisher}</ListGroupItem>
+                <ListGroupItem>{this.state.book.isbn}</ListGroupItem>
+              </ListGroup>
+            </Card.Text>
+            <form
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-around",
+              }}
+              onSubmit={this.handleFormSubmit}
+            >
+              <label>Price</label>
+              <input
+                type="text"
+                name="price"
+                onChange={this.handleChange}
+                value={this.state.price}
+              />
+              <label>Used:</label>
+              <input
+                type="checkbox"
+                name="isUsed"
+                onChange={this.handleChange}
+                value={this.state.isUsed}
+              />
+              <button onClick={this.handleFormSubmit}>Add Book</button>
+            </form>
+          </Card.Body>
+        </Card>
+        <br />
+      </div>
+    );
   }
 }
 

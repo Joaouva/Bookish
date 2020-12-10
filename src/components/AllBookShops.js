@@ -43,7 +43,7 @@ class AllBookShops extends React.Component {
                   />
                   <Card.Body style={{ backgroundColor: "rgb(70, 69, 69)" }}>
                     <Card.Title>
-                      <h3 style={{ color: "white" }}>{booksshops.username}</h3>
+                      <h3 style={{ color: "white" }}>{booksshops.name}</h3>
                     </Card.Title>
                     <Card.Text style={{ color: "white" }}>
                       {booksshops.about}

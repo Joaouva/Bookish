@@ -66,7 +66,7 @@
 }
 body {
   background-color: lightgray !important;
-  font-family: "Roboto" !important;
+  font-family: "Oswald" !important;
 }
 .search-bar {
   border: 5px solid rgb(70, 69, 69) !important;
@@ -316,3 +316,7 @@ border: 2px solid rgb(52, 58, 64);
   box-shadow: 5px 5px #888888;
 }
 
+.card-bookFound {
+  padding: 10px;
+
+}
