@@ -23,7 +23,7 @@ function Homepage() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>Our Books</h3>
+              <h1>Our Books</h1>
               <p>
                 Search for all the books that are currently being sold in our
                 website!
@@ -42,7 +42,7 @@ function Homepage() {
               alt="Third slide"
             />
             <Carousel.Caption className="carousel-caption">
-              <h3>Our Bookshops</h3>
+              <h1>Our Bookshops</h1>
               <p>
                 Search for all the libraries currently selling in our website!
               </p>

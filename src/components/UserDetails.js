@@ -67,8 +67,9 @@ class UserDetails extends React.Component {
                       data-item-description={book.description}
                       data-item-image={book.image}
                       data-item-name={book.title}
+                      style={{marginTop:"3px"}}
                     >
-                      Buy this book!
+                      Add to cart
                     </button>
                   </div>
                 </div>

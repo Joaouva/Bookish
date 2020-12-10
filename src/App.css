@@ -62,7 +62,7 @@
   position: sticky;
 }
 .navbar-links {
-  margin-left: 76%;
+  margin-left: 65%;
 }
 body {
   background-color: lightgray !important;
@@ -121,33 +121,35 @@ body {
 }
 
 .snipcart-add-item {
-  margin-top: 1vw;
-  color: #fff;
-  background-color: #6c757d;
-  user-select: none;
-  -ms-user-select: none;
-  border-color: #6c757d;
-  display: inline-block;
-  font-weight: 400;
-  color: #212529;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid transparent;
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  transition-property: color, background-color, border-color, box-shadow;
-  transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
-  transition-timing-function: ease-in-out,ease-in-out,ease-in-out,ease-in-out;
-  transition-delay: 0s,0s,0s,0s;
+ display:inline-block !important;
+ background-color: #ced2d6;
+ padding:0.3em 2em !important;
+ margin:0 0.1em 0.1em 0 !important;
+ box-sizing: border-box !important;
+ transition: all 0.2s !important;
+height: 60px !important;
+border-radius: 20px;
+outline: none !important;
 }
+
+.snipcart-add-item:hover{
+  border-color: rgba(255,255,255,1) !important;
+}
+
+.snipcart-add-item a{
+  color:#FFFFFF !important;
+  text-decoration:none !important;
+ font-family:'Roboto',sans-serif !important;
+ font-weight:300 !important;
+ text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35) !important;
+ text-align:center !important;
+}
+
 
 
 .cards-from-allbookshops {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 50px;
 }
@@ -245,7 +247,7 @@ height: 44rem;
 }
 .bookdetails-description {
 width: 30rem !important;
-height: 44rem !important;
+height: fit-content;
 
 }
 

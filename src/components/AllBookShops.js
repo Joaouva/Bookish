@@ -31,19 +31,16 @@ class AllBookShops extends React.Component {
                   style={{
                     width: "15rem",
                     height: "25rem",
-                    objectFit: "cover",
                   }}
-                  className="allbooks"
                 >
                   <Card.Img
-                    className="bookshop-img"
                     variant="top"
                     src="../../images/shelf.jpeg"
-                    style={{ height: "10rem", width: "18vw" }}
+                    
                   />
                   <Card.Body style={{ backgroundColor: "rgb(70, 69, 69)" }}>
                     <Card.Title>
-                      <h3 style={{ color: "white" }}>{booksshops.name}</h3>
+                      <h4 style={{ color: "white" }}>{booksshops.name}</h4>
                     </Card.Title>
                     <Card.Text style={{ color: "white" }}>
                       {booksshops.about}
@@ -56,7 +53,7 @@ class AllBookShops extends React.Component {
                   </Card.Body>
                 </Card>
                 <Link to={`/allbookshops/${booksshops._id}`}>
-                  <Button variant="dark" style={{ marginTop: "4px" }}>
+                  <Button variant="dark" style={{ marginBottom:"40px", marginTop:"3px" }}>
                     View Book Shop
                   </Button>
                 </Link>

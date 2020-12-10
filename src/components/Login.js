@@ -52,7 +52,7 @@ class Login extends React.Component {
           />
           <button className="login">Login</button>
         </form>
-        <p>
+        <p style={{marginTop:"3px"}}>
           Don't have account?
           <Link to={"/signup"}> Signup</Link>
         </p>
