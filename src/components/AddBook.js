@@ -64,7 +64,7 @@ class AddBook extends React.Component {
 					</Button>
 				</form>
 				<Container className="container-addbook">
-					<h2>The last added books in bookish</h2>
+					<h2>Latest in Bookish</h2>
 					<CardGroup>
 						<div className="books-wrapper">
 							{this.state.books
