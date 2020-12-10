@@ -66,6 +66,7 @@
 }
 body {
   background-color: lightgray !important;
+  font-family: "Roboto" !important;
 }
 .search-bar {
   border: 5px solid rgb(70, 69, 69) !important;
