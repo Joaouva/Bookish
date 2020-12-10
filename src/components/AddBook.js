@@ -44,36 +44,44 @@ class AddBook extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1> Add a new book: </h1>
 				<form onSubmit={this.handleFormSubmit}>
 					<input
+						className="addbook-form"
 						type="text"
 						name="isbn"
 						onChange={this.handleChange}
 						value={this.state.isbn}
-					/>
-					<button> Find Book </button>
+						placeholder="Find a book by ISBN"
+          />
+          <br></br>
+					<Button className="search-button-addbook" variant="danger"> Search </Button>
 				</form>
-				<Container>
+				<Container className="container-addbook">
+					<h2>The last added books in bookish</h2>
 					<CardGroup>
 						<div className="books-wrapper">
-							{this.state.books.slice(this.state.books.length-4,this.state.books.length).map((book, index) => {
-								return (
-									<Card className="allbooks">
-										<Link to={`/books/${book.ISBN}`}>
-											{" "}
-											<Card.Img
-												variant="top"
-												src={book.image}
-												style={{ height: "21rem" }}
-											/>
-										</Link>
-										{/* <Card.Body>
+							{this.state.books
+								.slice(
+									this.state.books.length - 4,
+									this.state.books.length
+								)
+								.map((book, index) => {
+									return (
+										<Card className="allbooks">
+											<Link to={`/books/${book.ISBN}`}>
+												{" "}
+												<Card.Img
+													variant="top"
+													src={book.image}
+													style={{ height: "21rem" }}
+												/>
+											</Link>
+											{/* <Card.Body>
                       <Card.Title>{book.price}</Card.Title>
                     </Card.Body> */}
-									</Card>
-								);
-							})}
+										</Card>
+									);
+								})}
 						</div>
 					</CardGroup>
 				</Container>

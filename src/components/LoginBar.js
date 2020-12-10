@@ -20,33 +20,38 @@ class LoginBar extends React.Component {
   render() {
     if (this.props.loggedInUser) {
       return (
-        <div>
-          <Navbar
-            className="bookish-navbar"
-            sticky="top"
-            bg="dark"
-            variant="dark"
-            expand="lg"
-          >
-            <Navbar.Brand className="bookish-logo" href="/">
-              Bookish
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="navbar-links">
-                <Nav.Link href="/addbook">Add new book</Nav.Link>
-                <Nav.Link href={`/profile/${this.props.loggedInUser._id}`}>
-                  Profile
-                </Nav.Link>
+			<div>
+				<Navbar
+					className="bookish-navbar"
+					sticky="top"
+					bg="dark"
+					variant="dark"
+					expand="lg"
+				>
+					<Navbar.Brand className="bookish-logo" href="/">
+						Bookish
+					</Navbar.Brand>
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Collapse id="basic-navbar-nav">
+						<Nav className="navbar-links">
+							<Nav.Link href="/addbook">Add new book</Nav.Link>
+							<Nav.Link
+								href={`/profile/${this.props.loggedInUser._id}`}
+							>
+								Profile
+							</Nav.Link>
 
-                <Button variant="outline-secondary" onClick={this.logoutUser}>
-                  Log Out
-                </Button>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
-        </div>
-      );
+							<Button
+								variant="outline-secondary"
+								onClick={this.logoutUser}
+							>
+								Log Out
+							</Button>
+						</Nav>
+					</Navbar.Collapse>
+				</Navbar>
+			</div>
+		);
     } else {
       return (
         <div>

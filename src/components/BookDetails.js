@@ -48,67 +48,91 @@ class BookDetails extends React.Component {
 
   render() {
     return this.state.price ? (
-      <div>
-        <Jumbotron fluid>
-          <Container>
-            <h1>{this.state.title}</h1>
-            <h3>{this.state.author}</h3>
-          </Container>
-        </Jumbotron>
-        <Card style={{ width: "100%" }}>
-          <Card.Body>
-            <Card.Text>
-              <Row>
-                <Col>
-                  <Card.Img
-                    variant="top"
-                    src={this.state.image}
-                    style={{ width: "20rem", height: "30rem" }}
-                  />
-                </Col>
-                <Col>
-                  <h4>
-                    {" "}
-                    Published by: {this.state.publisher} in{" "}
-                    {this.state.published}{" "}
-                  </h4>
-                  <hr />
-                  <h5> ISBN Code: {this.state.isbn}</h5>
-                  <h5>Language: {this.state.language}</h5>
-                  <br />
-                  <h5> Description:</h5>
-                  <br />
-                  <p
-                    className="book-description"
-                    dangerouslySetInnerHTML={{
-                      __html: this.state.description,
-                    }}
-                  />
-                  <p> Price: {this.state.price} €</p>
-                  <p>Book State: {this.state.isUsed ? "Used" : "New"} </p>
-
-                  <button
-                    class="snipcart-add-item"
-                    data-item-id={this.state.isbn}
-                    data-item-price={this.state.price}
-                    data-item-url={`/books/${this.state.isbn}`}
-                    data-item-description={this.state.description}
-                    data-item-image={this.state.image}
-                    data-item-name={this.state.title}
-                  >
-                    Buy this book!
-                  </button>
-                </Col>
-              </Row>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </div>
-    ) : (
-      <Spinner animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner>
-    );
+		<div>
+			<Jumbotron fluid className="jumbotron-bookdetails">
+				<Container>
+					<h1>{this.state.title}</h1>
+					<h3>{this.state.author}</h3>
+				</Container>
+			</Jumbotron>
+			<Container className="bookdetails-container">
+				<Card style={{ width: "100%" }} className="bookdetails-card">
+					<Card.Body>
+						<Card.Text>
+							<Row>
+								<Col>
+									<Card.Img
+										variant="top"
+										src={this.state.image}
+										style={{
+											width: "20rem",
+											height: "30rem",
+										}}
+									/>
+								</Col>
+								<Col>
+									<Card
+										style={{ width: "100%" }}
+										className="bookdetails-card"
+									>
+										<Card.Body>
+											<Card.Subtitle className="mb-2 text-muted">
+												Book State:{" "}
+												{this.state.isUsed
+													? "Used"
+													: "New"}{" "}
+											</Card.Subtitle>
+											<Card.Text>
+												<h6
+													className="book-description"
+													dangerouslySetInnerHTML={{
+														__html: this.state
+															.description,
+													}}
+												/>
+											</Card.Text>
+											<Card.Subtitle className="mb-2 text-muted">
+												ISBN Code {this.state.isbn}
+											</Card.Subtitle>
+											<Card.Subtitle className="mb-2 text-muted">
+												<p>
+													Language:{" "}
+													{this.state.language}
+												</p>
+											</Card.Subtitle>
+											<button
+												class="snipcart-add-item"
+												data-item-id={this.state.isbn}
+												data-item-price={
+													this.state.price
+												}
+												data-item-url={`/books/${this.state.isbn}`}
+												data-item-description={
+													this.state.description
+												}
+												data-item-image={
+													this.state.image
+												}
+												data-item-name={
+													this.state.title
+												}
+											>
+												Buy this book!
+											</button>
+										</Card.Body>
+									</Card>
+								</Col>
+							</Row>
+						</Card.Text>
+					</Card.Body>
+				</Card>
+			</Container>
+		</div>
+	) : (
+		<Spinner animation="border" role="status">
+			<span className="sr-only">Loading...</span>
+		</Spinner>
+	);
   }
 }
 
