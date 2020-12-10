@@ -72,8 +72,12 @@ class LoginBar extends React.Component {
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="navbar-links">
-                  <Nav.Link href="/login">Login</Nav.Link>
-                  <Nav.Link href="/signup">Signup</Nav.Link>
+                  <Nav.Link className="google" href="/login">
+                    Login
+                  </Nav.Link>
+                  <Nav.Link className="google" href="/signup">
+                    Signup
+                  </Nav.Link>
                   <Nav.Link href="/login-google">
                     <img
                       style={{ height: "50px" }}
@@ -91,5 +95,3 @@ class LoginBar extends React.Component {
 }
 
 export default LoginBar;
-
-
