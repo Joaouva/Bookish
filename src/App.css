@@ -71,7 +71,7 @@ body {
 .search-bar {
   border: 5px solid rgb(70, 69, 69) !important;
   border-radius: 20px;
-  padding: 2px 200px;
+  padding: 2px 20vw;
   outline: none;
   box-shadow: 5px 5px #888888;
   margin-bottom: 2%;
@@ -223,10 +223,11 @@ body {
   margin-top: 6%;
   border: 5px solid rgb(70, 69, 69) !important;
   border-radius: 20px;
-  padding: 2px 200px;
+  padding: 2px 20vw;
   outline: none;
   box-shadow: 5px 5px #888888;
   margin-bottom: 1%;
+  text-align: center;
 }
 
 .search-button-addbook{
@@ -240,9 +241,11 @@ body {
 }
 
 .bookdetails-card{
-  background-color: rgb(53,58,63) !important;
+  background-color: transparent !important;
   color: white;
   margin-left: 15%;
+  padding: 5%;
+  
 }
 
 .jumbotron-bookdetails {

@@ -65,70 +65,42 @@ class BookDetails extends React.Component {
 									variant="top"
 									src={this.state.image}
 									style={{
-										width: "20rem",
-										height: "30rem",
+										width: "30vw",
+										height: "50vw",
+										minHeight: "40vw",
+										minWidth: "25vw",
 									}}
 								/>
 							</Card>
 						</div>
 					</CardGroup>
 				</div>
-				<div>
-					<Card
-						style={{ width: "80%", height: "30rem" }}
-						className="bookdetails-card"
-					>
+					<Card className="text-center">
+						<Card.Header>ISBN Code {this.state.isbn}</Card.Header>
 						<Card.Body>
-							<Card.Text>
-												<Card.Subtitle className="mb-2 text-muted">
-													Book State:{" "}
-													{this.state.isUsed
-														? "Used"
-														: "New"}{" "}
-												</Card.Subtitle>
-												<Card.Text>
-													<h6
-														className="book-description"
-														dangerouslySetInnerHTML={{
-															__html: this.state
-																.description,
-														}}
-													/>
-												</Card.Text>
-												<Card.Subtitle className="mb-2 text-muted">
-													ISBN Code {this.state.isbn}
-												</Card.Subtitle>
-												<Card.Subtitle className="mb-2 text-muted">
-													<p>
-														Language:{" "}
-														{this.state.language}
-													</p>
-												</Card.Subtitle>
-												<button
-													class="snipcart-add-item"
-													data-item-id={
-														this.state.isbn
-													}
-													data-item-price={
-														this.state.price
-													}
-													data-item-url={`/books/${this.state.isbn}`}
-													data-item-description={
-														this.state.description
-													}
-													data-item-image={
-														this.state.image
-													}
-													data-item-name={
-														this.state.title
-													}
-												>
-													Buy this book!
-												</button>
-							</Card.Text>
+							<Card.Title>About this book</Card.Title>
+							<Card.Text
+								className="book-description"
+								dangerouslySetInnerHTML={{
+									__html: this.state.description,
+								}}
+							></Card.Text>
+							<button
+								class="snipcart-add-item"
+								data-item-id={this.state.isbn}
+								data-item-price={this.state.price}
+								data-item-url={`/books/${this.state.isbn}`}
+								data-item-description={this.state.description}
+								data-item-image={this.state.image}
+								data-item-name={this.state.title}
+							>
+								Buy this book!
+							</button>
 						</Card.Body>
+						<Card.Footer className="text-muted">
+							Book State: {this.state.isUsed ? "Used" : "New"}{" "}
+						</Card.Footer>
 					</Card>
-				</div>
 			</Container>
 		</div>
 	) : (

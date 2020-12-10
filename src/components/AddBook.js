@@ -52,9 +52,16 @@ class AddBook extends React.Component {
 						onChange={this.handleChange}
 						value={this.state.isbn}
 						placeholder="Find a book by ISBN"
-          />
-          <br></br>
-					<Button className="search-button-addbook" variant="danger"> Search </Button>
+					/>
+					<br></br>
+					<Button
+						onClick={this.handleFormSubmit}
+						className="search-button-addbook"
+						variant="danger"
+					>
+						{" "}
+						Search{" "}
+					</Button>
 				</form>
 				<Container className="container-addbook">
 					<h2>The last added books in bookish</h2>
