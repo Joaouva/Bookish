@@ -43,17 +43,14 @@ class LoginBar extends React.Component {
                   Profile
                 </Nav.Link>
 
-							<Button
-								variant="outline-secondary"
-								onClick={this.logoutUser}
-							>
-								Log Out
-							</Button>
-						</Nav>
-					</Navbar.Collapse>
-				</Navbar>
-			</div>
-		);
+                <Button variant="outline-secondary" onClick={this.logoutUser}>
+                  Log Out
+                </Button>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </div>
+      );
     } else {
       return (
         <div>
@@ -67,6 +64,9 @@ class LoginBar extends React.Component {
             >
               <Navbar.Brand className="bookish-logo" href="/">
                 Bookish
+                <p style={{ fontSize: "0.9rem", marginTop: "-11px" }}>
+                  just books
+                </p>
               </Navbar.Brand>
 
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
