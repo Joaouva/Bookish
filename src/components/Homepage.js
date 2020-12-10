@@ -19,7 +19,7 @@ function Homepage() {
               width={300}
               height={400}
               className="d-block w-100 slide-image"
-              src="../../images/allbooks.jpg"
+              src="../../images/allbooks.png"
               alt="First slide"
             />
             <Carousel.Caption>
