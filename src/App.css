@@ -50,7 +50,7 @@
   width: 225px;
   margin: 25px;
   height: fit-content;
-  border: 4px solid rgb(70, 69, 69) !important;
+  border: 5px solid rgb(70, 69, 69) !important;
 }
 .bookish-logo {
   font-family: "Abril Fatface";
@@ -315,3 +315,4 @@ border: 2px solid rgb(52, 58, 64);
 .jumbotron-bookdetails {
   box-shadow: 5px 5px #888888;
 }
+

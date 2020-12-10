@@ -41,10 +41,18 @@ class AllBookShops extends React.Component {
                     src="../../images/shelf.jpeg"
                     style={{ height: "10rem", width: "18vw" }}
                   />
-                  <Card.Body>
-                    <Card.Title>{booksshops.username}</Card.Title>
-                    <Card.Text>{booksshops.about}</Card.Text>
-                    <small className="text-muted">{booksshops.city}</small>
+                  <Card.Body style={{ backgroundColor: "rgb(70, 69, 69)" }}>
+                    <Card.Title>
+                      <h3 style={{ color: "white" }}>{booksshops.username}</h3>
+                    </Card.Title>
+                    <Card.Text style={{ color: "white" }}>
+                      {booksshops.about}
+                    </Card.Text>
+                    <small className="text-muted">
+                      <strong style={{ color: "white" }}>
+                        {booksshops.city}
+                      </strong>
+                    </small>
                   </Card.Body>
                 </Card>
                 <Link to={`/allbookshops/${booksshops._id}`}>
