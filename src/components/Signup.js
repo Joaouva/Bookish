@@ -38,8 +38,8 @@ class Signup extends React.Component {
   };
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <div className="div-sign-up">
+        <form  className="sign-up-form" onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
           <input
             type="text"
@@ -74,7 +74,7 @@ class Signup extends React.Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
-          <input type="submit" value="Signup" />
+          <input id="btn-signup" type="submit" value="Signup" />
         </form>
         <p>
           Already have account?

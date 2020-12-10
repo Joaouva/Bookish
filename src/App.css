@@ -255,3 +255,25 @@ padding-top: 50px;
   background-color: rgb(52, 58, 64);
   color: rgb(154, 149, 150)
 }
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+width: 30rem;
+align-items: center !important;
+margin: 0 auto;
+}
+
+.div-sign-up input {
+  margin-bottom: 10px;
+  width: 20rem;
+  border: 2px solid rgb(52, 58, 64)
+}
+
+#btn-signup {
+  margin-top: 19px;
+  width: 9rem !important;
+  background-color: rgb(52, 58, 64);
+  color: white;
+  font-weight: bold;
+}
