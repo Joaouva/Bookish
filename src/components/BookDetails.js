@@ -56,31 +56,27 @@ class BookDetails extends React.Component {
 					<h3>{this.state.author}</h3>
 				</Container>
 			</Jumbotron>
-			<Container className="bookdetails-container">
-				<div>
-					<CardGroup>
-						<div className="books-wrapper">
-							<Card className="allbooks">
-								<Card.Img
-									variant="top"
-									src={this.state.image}
-									style={{
-										width: "30vw",
-										height: "50vw",
-										minHeight: "40vw",
-										minWidth: "25vw",
-									}}
-								/>
-							</Card>
-						</div>
-					</CardGroup>
+			<div className="bookdetails-container">
+				<div className="bookdetails-image">
+					<img
+						src={this.state.image}
+						className="bookdetails-image"
+					></img>
+					{/* <CardGroup>
+						<Card>
+							<Card.Img variant="top" src={this.state.image} />
+						</Card>
+					</CardGroup> */}
 				</div>
-					<Card className="text-center">
+				<div>
+					<Card
+						className="text-center"
+						className="bookdetails-description"
+					>
 						<Card.Header>ISBN Code {this.state.isbn}</Card.Header>
 						<Card.Body>
-							<Card.Title>About this book</Card.Title>
+							<Card.Title>Description</Card.Title>
 							<Card.Text
-								className="book-description"
 								dangerouslySetInnerHTML={{
 									__html: this.state.description,
 								}}
@@ -93,6 +89,7 @@ class BookDetails extends React.Component {
 								data-item-description={this.state.description}
 								data-item-image={this.state.image}
 								data-item-name={this.state.title}
+								style={{ marginTop: "30%" }}
 							>
 								Buy this book!
 							</button>
@@ -101,7 +98,8 @@ class BookDetails extends React.Component {
 							Book State: {this.state.isUsed ? "Used" : "New"}{" "}
 						</Card.Footer>
 					</Card>
-			</Container>
+				</div>
+			</div>
 		</div>
 	) : (
 		<Spinner animation="border" role="status">

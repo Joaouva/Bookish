@@ -239,21 +239,23 @@ body {
   width: 20vw;
 }
 
-.bookdetails-container{
-  background-color: rgb(53,58,63);
+.bookdetails-image {
+width: 30rem;
+height: 44rem;
+}
+.bookdetails-description {
+width: 30rem !important;
+height: 44rem !important;
+
+}
+
+.bookdetails-container {
   display: flex;
-}
-
-.bookdetails-card{
-  background-color: transparent !important;
-  color: white;
-  margin-left: 15%;
-  padding: 5%;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
   
-}
 
-.jumbotron-bookdetails {
-  box-shadow: 5px 5px #888888;
 }
 
 #footer {
@@ -308,4 +310,8 @@ border: 2px solid rgb(52, 58, 64);
   margin-top: 9px;
   font-weight: bold;
   padding: 4px 16px;
+}
+
+.jumbotron-bookdetails {
+  box-shadow: 5px 5px #888888;
 }
