@@ -60,33 +60,58 @@ class EditBook extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1> Edit your book: </h1>
-        <Card style={{ width: "19rem" }} className="edit-book">
-          <Card.Img variant="top" src={this.state.image} />
-          <Card.Body>
-            <Card.Title> {this.state.title} </Card.Title>
-            <Card.Text> Asked Price: {this.state.price}</Card.Text>
-            <Form onSubmit={this.handleFormSubmit}>
-              <input
-                type="number"
-                name="price"
-                onChange={this.handleChange}
-                value={this.state.price}
-              />
-              <button>Save</button>
-              <button
-                onClick={() =>
-                  this.handleBookDelete(this.props.match.params.id)
-                }
-              >
-                Delete
-              </button>
-            </Form>
-          </Card.Body>
-        </Card>
-      </div>
-    );
+		<div>
+			<h1> Edit your book</h1>
+			<div className="edit-book-container">
+				<div>
+					<Card
+						style={{ width: "20rem", height: "33rem", maxHeight:"33rem", maxWidth:"22rem", boxShadow: "5px 5px #888888" }}
+						className="allbooks"
+					>
+						<Card.Img
+							variant="top"
+							src={this.state.image}
+							style={{ height: "32.2rem", maxHeight:"32.2rem" }}
+						/>
+					</Card>
+				</div>
+				<div className="form-edit-book">
+					<Form onSubmit={this.handleFormSubmit}>
+						<Form.Group
+							controlId="formBasicRange"
+							className="edit-book-form"
+						>
+							<Form.Control
+								type="range"
+								className="price-box"
+								type="number"
+								name="price"
+								onChange={this.handleChange}
+								value={this.state.price}
+							></Form.Control>
+							<Button
+								onClick={this.handleFormSubmit}
+								variant="dark"
+								style={{ width: "20vw" }}
+							>
+								Save
+							</Button>
+						</Form.Group>
+					</Form>
+
+					<Button
+						style={{ width: "20vw" }}
+						variant="danger"
+						onClick={() =>
+							this.handleBookDelete(this.props.match.params.id)
+						}
+					>
+						Delete
+					</Button>
+				</div>
+			</div>
+		</div>
+	);
   }
 }
 
