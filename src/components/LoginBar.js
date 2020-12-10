@@ -29,8 +29,12 @@ class LoginBar extends React.Component {
             expand="lg"
           >
             <Navbar.Brand className="bookish-logo" href="/">
-              Bookish
+              Bookish <br />
+              <p style={{ fontSize: "0.9rem", marginTop: "-11px" }}>
+                just books
+              </p>
             </Navbar.Brand>
+
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="navbar-links">

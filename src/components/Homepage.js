@@ -6,6 +6,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Carousel from "react-bootstrap/Carousel";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   return (
@@ -52,6 +54,25 @@ function Homepage() {
         </Carousel>
       </div>
       <div></div>
+      <footer id="footer">
+        <div>
+          {" "}
+          <h3> Our Sales</h3>
+          <img style={{height:"100px"}} src="../../images/sale.png" />
+        </div>
+        <div>
+          <form>
+            <h3>Newsletter</h3>
+            <p> Insert your email to subscribe</p>
+            <input type="email" placeholder="enter email" />
+          </form>
+        </div>
+        <div>
+          <h3>Contact us</h3>
+          <p> info@bookish.com</p>
+          <img style={{ width: "140px" }} src="../../images/allmedia.png" />
+        </div>
+      </footer>
     </div>
   );
 }
