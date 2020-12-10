@@ -62,7 +62,7 @@
   position: fixed;
 }
 .navbar-links {
-  margin-left: 68%;
+  margin-left: 76%;
 }
 body {
   background-color: lightgray !important;
@@ -282,4 +282,21 @@ margin: 0 auto;
   display: flex !important;
 flex-direction: column !important;
 justify-content: center !important;
+}
+
+.login-div {
+display: flex;
+flex-direction: column;
+margin: 0 auto;
+margin-bottom: 7px;
+border: 2px solid rgb(52, 58, 64);
+
+}
+
+.login {
+  background-color:rgb(52, 58, 64) ;
+  color: white;
+  margin-top: 9px;
+  font-weight: bold;
+  padding: 4px 16px;
 }
