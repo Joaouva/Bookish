@@ -71,59 +71,64 @@ class GetBooksFromApi extends React.Component {
   };
   render() {
     return (
-      <div>
-        <h3> Is this the book? </h3>
-        <div>
-          <Card
-            style={{
-              paddingLeft: "10px",
-              height: "30rem",
-              width: "20rem",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            <Card.Img variant="top" src={this.state.book.image} />
-            <Card.Body>
-              <Card.Title>{this.state.book.title}</Card.Title>
-              <Card.Text
-                style={{ width: "30rem" }}
-                dangerouslySetInnerHTML={{
-                  __html: this.state.book.description,
-                }}
-              ></Card.Text>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroupItem>{this.state.book.published}</ListGroupItem>
-              <ListGroupItem>{this.state.book.publisher}</ListGroupItem>
-              <ListGroupItem>
-                <strong>ISBN</strong> {this.state.book.isbn}
-              </ListGroupItem>
-              <ListGroupItem>
-                <form onSubmit={this.handleFormSubmit}>
-                  <label>Price</label>
-                  <input
-                    type="text"
-                    name="price"
-                    onChange={this.handleChange}
-                    value={this.state.price}
-                  />
-                  <hr />
-                  <label>Used:</label>
-                  <input
-                    type="checkbox"
-                    name="isUsed"
-                    onChange={this.handleChange}
-                    value={this.state.isUsed}
-                  />
-                  <button> Add Book </button>
-                </form>
-              </ListGroupItem>
-            </ListGroup>
-          </Card>
-        </div>
-      </div>
-    );
+		<div>
+			<h3> Is this the book? </h3>
+			<div>
+				<Card
+					style={{
+						height: "30rem",
+						width: "20rem",
+						display: "flex",
+						flexDirection: "row",
+					}}
+				>
+					<Card.Img variant="top" src={this.state.book.image} />
+					<Card.Body>
+						<Card.Title>{this.state.book.title}</Card.Title>
+						<Card.Text
+							style={{ width: "30rem" }}
+							dangerouslySetInnerHTML={{
+								__html: this.state.book.description,
+							}}
+						></Card.Text>
+					</Card.Body>
+					<ListGroup className="list-group-flush">
+						<ListGroupItem>
+							{this.state.book.published}
+						</ListGroupItem>
+						<ListGroupItem>
+							{this.state.book.publisher}
+						</ListGroupItem>
+						<ListGroupItem>
+							<strong>ISBN</strong> {this.state.book.isbn}
+						</ListGroupItem>
+						<ListGroupItem>
+							<form onSubmit={this.handleFormSubmit}>
+								<label>Price</label>
+								<input
+									type="text"
+									name="price"
+									onChange={this.handleChange}
+									value={this.state.price}
+								/>
+								<hr />
+								<label>Used:</label>
+								<input
+									type="checkbox"
+									name="isUsed"
+									onChange={this.handleChange}
+									value={this.state.isUsed}
+								/>
+								<button onClick={this.handleFormSubmit}>
+									Add Book
+								</button>
+							</form>
+						</ListGroupItem>
+					</ListGroup>
+				</Card>
+			</div>
+		</div>
+	);
   }
 }
 
