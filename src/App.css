@@ -43,15 +43,14 @@
 
 .card {
   width: 225px;
-  margin: 25px;
-  height: 580px;
+  height: fit-content;
 }
 
 .allbooks {
   width: 225px;
   margin: 25px;
-  height: 350px;
-  border: 7px solid rgb(70, 69, 69) !important;
+  height: fit-content;
+  border: 4px solid rgb(70, 69, 69) !important;
 }
 .bookish-logo {
   font-family: "Abril Fatface";
@@ -181,4 +180,13 @@ body {
   margin-top: 10vw !important;
   margin-left: 1vw;
 
+}
+.card-body {
+  padding-right: 100px !important;
+  padding-top: 100px !important;
+}
+
+.book-description {
+  text-align: start !important;
+  font-size: 1vw !important;
 }
