@@ -67,7 +67,7 @@ class EditBook extends React.Component {
             <Card
               style={{
                 width: "20rem",
-                height: "33rem",
+                height: "fit-content",
                 maxHeight: "33rem",
                 maxWidth: "22rem",
                 boxShadow: "5px 5px #888888",

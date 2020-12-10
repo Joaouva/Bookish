@@ -76,6 +76,7 @@ class GetBooksFromApi extends React.Component {
         <div>
           <Card
             style={{
+              paddingLeft: "10px",
               height: "30rem",
               width: "20rem",
               display: "flex",
