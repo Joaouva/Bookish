@@ -43,14 +43,17 @@ class LoginBar extends React.Component {
                   Profile
                 </Nav.Link>
 
-                <Button variant="outline-secondary" onClick={this.logoutUser}>
-                  Log Out
-                </Button>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
-        </div>
-      );
+							<Button
+								variant="outline-secondary"
+								onClick={this.logoutUser}
+							>
+								Log Out
+							</Button>
+						</Nav>
+					</Navbar.Collapse>
+				</Navbar>
+			</div>
+		);
     } else {
       return (
         <div>
