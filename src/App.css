@@ -234,11 +234,13 @@ body {
 
 .bookdetails-container{
   background-color: rgb(53,58,63);
+  display: flex;
 }
 
 .bookdetails-card{
   background-color: rgb(53,58,63) !important;
   color: white;
+  margin-left: 15%;
 }
 
 .jumbotron-bookdetails {

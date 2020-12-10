@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import CardGroup from "react-bootstrap/CardGroup"
 
 class BookDetails extends React.Component {
   state = {
@@ -56,76 +57,78 @@ class BookDetails extends React.Component {
 				</Container>
 			</Jumbotron>
 			<Container className="bookdetails-container">
-				<Card style={{ width: "100%" }} className="bookdetails-card">
-					<Card.Body>
-						<Card.Text>
-							<Row>
-								<Col>
-									<Card.Img
-										variant="top"
-										src={this.state.image}
-										style={{
-											width: "20rem",
-											height: "30rem",
-										}}
-									/>
-								</Col>
-								<Col>
-									<Card
-										style={{ width: "100%" }}
-										className="bookdetails-card"
-									>
-										<Card.Body>
-											<Card.Subtitle className="mb-2 text-muted">
-												Book State:{" "}
-												{this.state.isUsed
-													? "Used"
-													: "New"}{" "}
-											</Card.Subtitle>
-											<Card.Text>
-												<h6
-													className="book-description"
-													dangerouslySetInnerHTML={{
-														__html: this.state
-															.description,
-													}}
-												/>
-											</Card.Text>
-											<Card.Subtitle className="mb-2 text-muted">
-												ISBN Code {this.state.isbn}
-											</Card.Subtitle>
-											<Card.Subtitle className="mb-2 text-muted">
-												<p>
-													Language:{" "}
-													{this.state.language}
-												</p>
-											</Card.Subtitle>
-											<button
-												class="snipcart-add-item"
-												data-item-id={this.state.isbn}
-												data-item-price={
-													this.state.price
-												}
-												data-item-url={`/books/${this.state.isbn}`}
-												data-item-description={
-													this.state.description
-												}
-												data-item-image={
-													this.state.image
-												}
-												data-item-name={
-													this.state.title
-												}
-											>
-												Buy this book!
-											</button>
-										</Card.Body>
-									</Card>
-								</Col>
-							</Row>
-						</Card.Text>
-					</Card.Body>
-				</Card>
+				<div>
+					<CardGroup>
+						<div className="books-wrapper">
+							<Card className="allbooks">
+								<Card.Img
+									variant="top"
+									src={this.state.image}
+									style={{
+										width: "20rem",
+										height: "30rem",
+									}}
+								/>
+							</Card>
+						</div>
+					</CardGroup>
+				</div>
+				<div>
+					<Card
+						style={{ width: "80%", height: "30rem" }}
+						className="bookdetails-card"
+					>
+						<Card.Body>
+							<Card.Text>
+												<Card.Subtitle className="mb-2 text-muted">
+													Book State:{" "}
+													{this.state.isUsed
+														? "Used"
+														: "New"}{" "}
+												</Card.Subtitle>
+												<Card.Text>
+													<h6
+														className="book-description"
+														dangerouslySetInnerHTML={{
+															__html: this.state
+																.description,
+														}}
+													/>
+												</Card.Text>
+												<Card.Subtitle className="mb-2 text-muted">
+													ISBN Code {this.state.isbn}
+												</Card.Subtitle>
+												<Card.Subtitle className="mb-2 text-muted">
+													<p>
+														Language:{" "}
+														{this.state.language}
+													</p>
+												</Card.Subtitle>
+												<button
+													class="snipcart-add-item"
+													data-item-id={
+														this.state.isbn
+													}
+													data-item-price={
+														this.state.price
+													}
+													data-item-url={`/books/${this.state.isbn}`}
+													data-item-description={
+														this.state.description
+													}
+													data-item-image={
+														this.state.image
+													}
+													data-item-name={
+														this.state.title
+													}
+												>
+													Buy this book!
+												</button>
+							</Card.Text>
+						</Card.Body>
+					</Card>
+				</div>
 			</Container>
 		</div>
 	) : (
