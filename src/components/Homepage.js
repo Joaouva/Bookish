@@ -70,7 +70,7 @@ function Homepage() {
         <div>
           <h3>Contact us</h3>
           <p> info@bookish.com</p>
-          <img style={{ width: "140px" }} src="../../images/allmedia.png" />
+          <img style={{ width: "140px" }} src="../../images/media.png" />
         </div>
       </footer>
     </div>
