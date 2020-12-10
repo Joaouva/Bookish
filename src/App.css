@@ -59,7 +59,7 @@
 
 .bookish-navbar {
   margin-bottom: 2%;
-  position: fixed;
+  position: sticky;
 }
 .navbar-links {
   margin-left: 76%;
