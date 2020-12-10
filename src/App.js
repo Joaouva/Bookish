@@ -70,6 +70,12 @@ class App extends React.Component {
           <Route exact path="/editbook/:id" component={EditBook} />
           <Route exact path="/bookfound/:isbn" render={() => {return <BookFound loggedInUser={this.state.loggedInUser} /> }}/>
           <Route exact path="/allbookshops/:id" component={UserDetails} />
+          <Route
+            path="/login-google"
+            render={() => {
+              window.location.href = `${process.env.REACT_APP_BOOKS_API}/api/auth/google`;
+            }}
+          />
         </Switch>
       </div>
     );

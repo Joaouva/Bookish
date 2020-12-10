@@ -60,58 +60,60 @@ class EditBook extends React.Component {
 
   render() {
     return (
-		<div>
-			<h1> Edit your book</h1>
-			<div className="edit-book-container">
-				<div>
-					<Card
-						style={{ width: "20rem", height: "33rem", maxHeight:"33rem", maxWidth:"22rem", boxShadow: "5px 5px #888888" }}
-						className="allbooks"
-					>
-						<Card.Img
-							variant="top"
-							src={this.state.image}
-							style={{ height: "32.2rem", maxHeight:"32.2rem" }}
-						/>
-					</Card>
-				</div>
-				<div className="form-edit-book">
-					<Form onSubmit={this.handleFormSubmit}>
-						<Form.Group
-							controlId="formBasicRange"
-							className="edit-book-form"
-						>
-							<Form.Control
-								type="range"
-								className="price-box"
-								type="number"
-								name="price"
-								onChange={this.handleChange}
-								value={this.state.price}
-							></Form.Control>
-							<Button
-								onClick={this.handleFormSubmit}
-								variant="dark"
-								style={{ width: "20vw" }}
-							>
-								Save
-							</Button>
-						</Form.Group>
-					</Form>
+      <div>
+        <h1> Edit your book</h1>
+        <div className="edit-book-container">
+          <div>
+            <Card
+              style={{
+                width: "20rem",
+                height: "33rem",
+                maxHeight: "33rem",
+                maxWidth: "22rem",
+                boxShadow: "5px 5px #888888",
+              }}
+              className="allbooks"
+            >
+              <Card.Img
+                variant="top"
+                src={this.state.image}
+                style={{ height: "32.2rem", maxHeight: "32.2rem" }}
+              />
+            </Card>
+          </div>
+          <div className="form-edit-book">
+            <Form onSubmit={this.handleFormSubmit}>
+              <h3> Edit price </h3>
+              <Form.Group controlId="formBasicRange" className="edit-book-form">
+                <Form.Control
+                  type="range"
+                  className="price-box"
+                  type="number"
+                  name="price"
+                  onChange={this.handleChange}
+                  value={this.state.price}
+                ></Form.Control>
+                <Button
+                  onClick={this.handleFormSubmit}
+                  variant="dark"
+                  style={{ width: "18vw" }}
+                >
+                  Save
+                </Button>
+              </Form.Group>
+            </Form>
 
-					<Button
-						style={{ width: "20vw" }}
-						variant="danger"
-						onClick={() =>
-							this.handleBookDelete(this.props.match.params.id)
-						}
-					>
-						Delete
-					</Button>
-				</div>
-			</div>
-		</div>
-	);
+            <Button
+              style={{ width: "18vw" }}
+              variant="danger"
+              onClick={() => this.handleBookDelete(this.props.match.params.id)}
+            >
+              Delete
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

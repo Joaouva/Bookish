@@ -67,7 +67,7 @@ class LoginBar extends React.Component {
                 <Nav className="navbar-links">
                   <Nav.Link href="/login">Login</Nav.Link>
                   <Nav.Link href="/signup">Signup</Nav.Link>
-                  <Nav.Link href="/auth/google">Login with Google</Nav.Link>
+                  <Nav.Link href="/login-google">Login with Google</Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
