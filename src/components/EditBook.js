@@ -46,6 +46,7 @@ class EditBook extends React.Component {
 
     booksFromDb.editBook(id, price).then((response) => {
       toast.success("Price updated!");
+      this.props.history.push(`/bookfound/${this.state.isbn}`);
     }).catch(() => {
 				toast("Ups! Something went wrong");
 			});
@@ -89,7 +90,6 @@ class EditBook extends React.Component {
                 <Form.Control
                   type="range"
                   className="price-box"
-                  // eslint-disable-next-line react/jsx-no-duplicate-props
                   type="number"
                   name="price"
                   onChange={this.handleChange}

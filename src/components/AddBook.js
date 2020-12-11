@@ -40,7 +40,7 @@ class AddBook extends React.Component {
 			.then(() => {
 				this.props.history.push(`/bookfound/${this.state.isbn}`);
 			})
-			.catch((err) => {
+			.catch(() => {
 				toast("Ups! Something went wrong");
 			});
 	};
