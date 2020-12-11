@@ -69,7 +69,7 @@ class GetBooksFromApi extends React.Component {
       })
       .then(() => {
         this.props.history.push(`/profile/${this.props.loggedInUser._id}`);
-        toast.success("Login Successfully!", {
+        toast("Book Added!", {
 			position: "top-center",
 			autoClose: 3000,
 			hideProgressBar: false,
@@ -78,9 +78,7 @@ class GetBooksFromApi extends React.Component {
 			draggable: true,
 			progress: undefined,
 		});
-      }).catch(() => {
-				toast("Ups! Something went wrong");
-			});
+      })
   };
   render() {
     return (

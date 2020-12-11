@@ -70,6 +70,7 @@ class Signup extends React.Component {
           />
           <label>Password:</label>
           <input
+            type="password"
             name="password"
             value={this.state.password}
             onChange={this.handleChange}
