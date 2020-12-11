@@ -50,35 +50,32 @@ function Homepage() {
 			<div></div>
 			<footer id="footer">
 				<div>
-					<img
-						style={{ height: "10vw" }}
-            src="../../images/sale.png"
-            alt="Sale-Offer"
-					/>
-				</div>
-				<div>
 					<form>
 						<h4>Subscribe our Newsletter</h4>
-            <input type="email" placeholder="enter your email"
-              style={{
-                border: "5px solid rgb(70, 69, 69)",
-                borderRadius: "20px",
-                outline: "none",
-                width: "30vw",
-                color: "black",
-                textAlign: "center"
-              }} />
+						<input
+							type="email"
+							placeholder="enter your email"
+							style={{
+								border: "5px solid rgb(70, 69, 69)",
+								borderRadius: "20px",
+								outline: "none",
+								width: "20vw",
+								color: "black",
+								textAlign: "center",
+							}}
+						/>
 					</form>
 				</div>
 				<div>
-					<h4>Contact us</h4>
-					<p style={{ fontSize: "12px" }}> info@bookish.com</p>
 					<img
-						style={{ width: "10vw" }}
-            src="../../images/media.png"
-            alt="socialmedia"
+						src="../../images/socialmedia.png"
+						alt="socialmedia"
+						style={{ width: "10rem", height: "3.5rem" }}
 					/>
 				</div>
+				<p style={{ fontSize: "14px" }}>
+					© 2020 Copyright Bookish <br></br> info@bookish.com
+				</p>
 			</footer>
 		</div>
   );
