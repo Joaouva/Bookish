@@ -164,7 +164,8 @@ class GetBooksFromApi extends React.Component {
 								type="number"
 								name="price"
 								onChange={this.handleChange}
-								value={this.state.price}
+                value={this.state.price}
+                required
 							/>
 						</Form.Group>
 						<Form.Group id="formGridCheckbox">

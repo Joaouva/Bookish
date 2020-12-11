@@ -120,7 +120,7 @@ class BookDetails extends React.Component {
 						</ListGroup>
 					</Card.Text>
 					<button
-						class="snipcart-add-item1"
+						class="snipcart-add-item"
 						data-item-id={this.state.isbn}
 						data-item-price={this.state.price}
 						data-item-url={`/books/${this.state.isbn}`}
@@ -128,7 +128,7 @@ class BookDetails extends React.Component {
 						data-item-image={this.state.image}
 						data-item-name={this.state.title}
 					>
-						<p>Add to Cart</p>
+						<p>Add to Cart<br></br>{this.state.price}€</p>
 					</button>
 				</Card.Body>
 			</Card>
