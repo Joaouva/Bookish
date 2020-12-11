@@ -1,13 +1,12 @@
 import React from "react";
 import BooksService from "../utils/api";
-import { withRouter, NavLink } from "react-router-dom";
-import Form from "react-bootstrap/Form";
+import { withRouter } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import BooksFromBd from "../utils/bd";
 import Card from "react-bootstrap/Card";
-import CardDeck from "react-bootstrap/CardDeck";
-import { Container, Row, Col, CardGroup } from "react-bootstrap";
+import { Container, CardGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 class AddBook extends React.Component {
 	state = {
@@ -36,9 +35,14 @@ class AddBook extends React.Component {
 	handleFormSubmit = (event) => {
 		event.preventDefault();
 		const booksService = new BooksService();
-		booksService.getBookByIsbn(this.state.isbn).then(() => {
-			this.props.history.push(`/bookfound/${this.state.isbn}`);
-		});
+		booksService
+			.getBookByIsbn(this.state.isbn)
+			.then(() => {
+				this.props.history.push(`/bookfound/${this.state.isbn}`);
+			})
+			.catch((err) => {
+				toast("Ups! Something went wrong");
+			});
 	};
 
 	render() {

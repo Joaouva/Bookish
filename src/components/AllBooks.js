@@ -2,12 +2,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import BooksFromBd from "../utils/bd";
-import BooksService from "../utils/api";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import CardDeck from "react-bootstrap/CardDeck";
-import { Container, Row, Col, CardGroup } from "react-bootstrap";
-import Badge from "react-bootstrap/Badge";
+import { Container, CardGroup } from "react-bootstrap";
+
 class GetBooksFromBd extends React.Component {
   state = {
     books: [],
@@ -17,7 +14,6 @@ class GetBooksFromBd extends React.Component {
 
   componentDidMount() {
     const booksFromdb = new BooksFromBd();
-    const booksService = new BooksService();
     booksFromdb.getAllBooks().then((response) => {
       console.log(response);
       this.setState({

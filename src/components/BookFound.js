@@ -1,12 +1,14 @@
 // extrai a info da api pelo isbn
 
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import BooksService from "../utils/api";
 import BooksFromDb from "../utils/bd";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import ListGroupItem from "react-bootstrap/ListGroupItem";
+import { toast } from "react-toastify";
+import { Form } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 class GetBooksFromApi extends React.Component {
   state = {
@@ -67,93 +69,132 @@ class GetBooksFromApi extends React.Component {
       })
       .then(() => {
         this.props.history.push(`/profile/${this.props.loggedInUser._id}`);
-      });
+        toast.success("Login Successfully!", {
+			position: "top-center",
+			autoClose: 3000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+		});
+      }).catch(() => {
+				toast("Ups! Something went wrong");
+			});
   };
   render() {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h2
-          style={{
-            marginBottom: "3rem",
-            backgroundColor: "gray",
-            padding: "20px",
-            width: "100vw",
-            boxShadow: "5px 5px darkGray ",
-          }}
-        >
-          {" "}
-          <b> Is this the book?</b>
-        </h2>
+		<div
+			style={{
+				display: "flex",
+				flexDirection: "column",
+				justifyContent: "center",
+				alignItems: "center",
+			}}
+		>
+			<h1
+				style={{
+					marginBottom: "3rem",
+					backgroundColor: "rgb(234,236,239)",
+					padding: "20px",
+          width: "100vw",
+          height: "10rem",
+          boxShadow: "5px 5px darkGray ",
+				}}
+			>
+				{" "}
+				<b> Is this the book?</b>
+			</h1>
 
-        <Card bg="secondary" text="white" style={{ width: "60vw" }}>
-          <Card.Header
-            style={{ fontSize: "2rem", marginTop: "2rem", fontWeight: "bold" }}
-          >
-            {this.state.book.title} <br />
-            <img
-              src={this.state.book.image}
-              style={{
-                marginTop: "2rem",
-                objectFit: "fill !important",
-                width: "50vw",
-              }}
-            />
-          </Card.Header>
-          <Card.Body>
-            <Card.Text
-              style={{ textAlign: "justify" }}
-              dangerouslySetInnerHTML={{
-                __html: this.state.book.description,
-              }}
-            ></Card.Text>
-            <Card.Text>
-              <ListGroup
-                style={{
-                  color: "black",
-                  marginTop: "10px",
-                  marginBottom: "30px",
-                }}
-              >
-                <ListGroupItem>{this.state.book.publisher}</ListGroupItem>
-                <ListGroupItem>{this.state.book.isbn}</ListGroupItem>
-              </ListGroup>
-            </Card.Text>
-            <form
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-around",
-              }}
-              onSubmit={this.handleFormSubmit}
-            >
-              <label>Price</label>
-              <input
-                type="text"
-                name="price"
-                onChange={this.handleChange}
-                value={this.state.price}
-              />
-              <label>Used:</label>
-              <input
-                type="checkbox"
-                name="isUsed"
-                onChange={this.handleChange}
-                value={this.state.isUsed}
-              />
-              <button onClick={this.handleFormSubmit}>Add Book</button>
-            </form>
-          </Card.Body>
-        </Card>
-        <br />
-      </div>
-    );
+			<Card bg="secondary" text="white" style={{ width: "60vw" }}>
+				<Card.Header
+					style={{
+						fontSize: "2rem",
+						marginTop: "2rem",
+						fontWeight: "bold",
+					}}
+				>
+					{this.state.book.title} <br />
+					<img
+						src={this.state.book.image}
+						alt="book-cover"
+						style={{
+							marginTop: "2rem",
+							objectFit: "fill !important",
+							width: "30vw",
+						}}
+					/>
+				</Card.Header>
+				<Card.Body>
+					<Card.Text
+						style={{ textAlign: "justify" }}
+						dangerouslySetInnerHTML={{
+							__html: this.state.book.description,
+						}}
+					></Card.Text>
+					<Card.Text>
+						<ListGroup
+							style={{
+								color: "black",
+								marginTop: "10px",
+								marginBottom: "30px",
+							}}
+						>
+							<footer>
+								Published by {this.state.book.publisher}
+							</footer>
+							<Card.Footer className="text-muted">
+								<p style={{ color: "white" }}>
+									ISBN {this.state.book.isbn}
+								</p>
+							</Card.Footer>
+						</ListGroup>
+					</Card.Text>
+					<form
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "space-around",
+						}}
+						onSubmit={this.handleFormSubmit}
+					>
+						<Form.Group controlId="formBasicRange">
+							<Form.Label>Price €</Form.Label>
+							<Form.Check
+								type="range"
+								// eslint-disable-next-line react/jsx-no-duplicate-props
+								type="number"
+								name="price"
+								onChange={this.handleChange}
+								value={this.state.price}
+							/>
+						</Form.Group>
+						<Form.Group id="formGridCheckbox">
+							<Form.Check
+								type="checkbox"
+								name="isUsed"
+								label="Used"
+								onChange={this.handleChange}
+								value={this.state.isUsed}
+							/>
+						</Form.Group>
+						<Button
+							onClick={this.handleFormSubmit}
+							variant="dark"
+							style={{
+								width: "30%",
+								margin: "0 auto",
+								display: "block",
+							}}
+						>
+							Add Book
+						</Button>
+					</form>
+				</Card.Body>
+			</Card>
+			<br />
+		</div>
+	);
   }
 }
 

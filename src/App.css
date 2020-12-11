@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -121,30 +123,50 @@ body {
 }
 
 .snipcart-add-item {
- display:inline-block !important;
- background-color: #ced2d6;
- padding:0.3em 2em !important;
- margin:0 0.1em 0.1em 0 !important;
- box-sizing: border-box !important;
- transition: all 0.2s !important;
-height: 60px !important;
-border-radius: 20px;
-outline: none !important;
+ border: none;
+background: #404040;
+color: #ffffff !important;
+font-weight: 100;
+padding: 10px;
+text-transform: uppercase;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
 }
 
 .snipcart-add-item:hover{
-  border-color: rgba(255,255,255,1) !important;
+color: #404040 !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: none;
+box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
 }
 
-.snipcart-add-item a{
-  color:#FFFFFF !important;
-  text-decoration:none !important;
- font-family:'Roboto',sans-serif !important;
- font-weight:300 !important;
- text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35) !important;
- text-align:center !important;
+.snipcart-add-item1 {
+ border: none;
+background: #404040;
+color: #ffffff !important;
+font-weight: 100;
+padding: 10px;
+text-transform: uppercase;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
 }
 
+.snipcart-add-item1:hover{
+color: #3c3c3c !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: #f8f8f8;
+box-shadow: 0px 5px 40px -10px rgba(248, 248, 248, 0.57);
+-webkit-box-shadow: 0px 5px 40px -10px rgba(248, 248, 248, 0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(255, 255, 255, 0.57);
+transition: all 0.3s ease 0s;
+}
 
 
 .cards-from-allbookshops {

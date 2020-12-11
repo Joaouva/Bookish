@@ -1,14 +1,8 @@
 import React from "react";
 import BooksService from "../utils/api";
 import { withRouter } from "react-router-dom";
-import { toast } from "react-toastify";
 import Spinner from "react-bootstrap/Spinner";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import CardGroup from "react-bootstrap/CardGroup"
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 
@@ -59,28 +53,31 @@ class BookDetails extends React.Component {
 				alignItems: "center",
 			}}
 		>
-			<h1
+			<div
 				style={{
-					marginBottom: "3rem",
-					backgroundColor: "gray",
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					marginBottom: "1rem",
+					backgroundColor: "rgb(234,236,239)",
 					padding: "20px",
 					width: "100vw",
+					height: "13rem",
 					boxShadow: "5px 5px darkGray ",
+					justifyContent: "center",
 				}}
 			>
-				{this.state.title}
-			</h1>
-			<h3
-				style={{
-					marginBottom: "3rem",
-					backgroundColor: "gray",
-					padding: "20px",
-					width: "30vw",
-					boxShadow: "5px 5px darkGray ",
-				}}
-			>
-				{this.state.author}
-			</h3>
+				<h1>{this.state.title}</h1>
+				<h5
+					style={{
+						marginBottom: "2rem",
+						padding: "10px",
+						width: "30vw",
+					}}
+				>
+					From {this.state.author}
+				</h5>
+			</div>
 
 			<Card bg="secondary" text="white" style={{ width: "60vw" }}>
 				<Card.Header
@@ -92,10 +89,11 @@ class BookDetails extends React.Component {
 				>
 					<img
 						src={this.state.image}
+						alt="book-cover"
 						style={{
 							marginTop: "2rem",
 							objectFit: "fill !important",
-							width: "40vw",
+							width: "30vw",
 						}}
 					/>
 				</Card.Header>
@@ -111,26 +109,26 @@ class BookDetails extends React.Component {
 							style={{
 								color: "black",
 								marginTop: "10px",
-								marginBottom: "30px",
+								marginBottom: "20px",
 							}}
 						>
-							<ListGroupItem>
-								{this.state.publisher}
-							</ListGroupItem>
-							<ListGroupItem>{this.state.isbn}</ListGroupItem>
+							<footer>Published by {this.state.publisher}</footer>
+							<Card.Footer className="text-muted">
+								<p style={{ color: "white" }}> ISBN {this.state.isbn}
+								</p>
+							</Card.Footer>
 						</ListGroup>
 					</Card.Text>
 					<button
-						class="snipcart-add-item"
+						class="snipcart-add-item1"
 						data-item-id={this.state.isbn}
 						data-item-price={this.state.price}
 						data-item-url={`/books/${this.state.isbn}`}
 						data-item-description={this.state.description}
 						data-item-image={this.state.image}
 						data-item-name={this.state.title}
-						style={{ marginTop: "3%" }}
 					>
-						<a>Buy this book!</a>
+						<p>Add to Cart</p>
 					</button>
 				</Card.Body>
 			</Card>

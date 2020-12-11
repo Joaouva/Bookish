@@ -1,5 +1,4 @@
 //Edit book component can only change price and grade!
-
 import React from "react";
 import BooksFromDb from "../utils/bd";
 import { withRouter } from "react-router-dom";
@@ -47,7 +46,9 @@ class EditBook extends React.Component {
 
     booksFromDb.editBook(id, price).then((response) => {
       toast.success("Price updated!");
-    });
+    }).catch(() => {
+				toast("Ups! Something went wrong");
+			});
   };
 
   handleBookDelete = (id) => {
@@ -88,6 +89,7 @@ class EditBook extends React.Component {
                 <Form.Control
                   type="range"
                   className="price-box"
+                  // eslint-disable-next-line react/jsx-no-duplicate-props
                   type="number"
                   name="price"
                   onChange={this.handleChange}

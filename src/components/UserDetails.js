@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BooksFromBd from "../utils/bd";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import CardDeck from "react-bootstrap/CardDeck";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Jumbotron from "react-bootstrap/Jumbotron";
 
 class UserDetails extends React.Component {

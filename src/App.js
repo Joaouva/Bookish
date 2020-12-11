@@ -1,5 +1,5 @@
 import "./App.css";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import AuthService from "./utils/auth";
@@ -16,9 +16,8 @@ import BookFound from "./components/BookFound";
 import BookDetails from "./components/BookDetails";
 import UserDetails from "./components/UserDetails";
 import EditBook from "./components/EditBook";
-
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button } from "react-bootstrap";
+
 
 class App extends React.Component {
   state = {

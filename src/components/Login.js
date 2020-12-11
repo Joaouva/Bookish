@@ -23,7 +23,15 @@ class Login extends React.Component {
       .then((response) => {
         this.props.setCurrentUser(response.data);
         this.props.history.push("/");
-        toast.success("Login Successfully!");
+        toast.success("Login Successfully!", {
+			position: "top-center",
+			autoClose: 3000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+		});
       })
       .catch(() => {
         toast.error("Invalid Login");

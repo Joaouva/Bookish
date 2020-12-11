@@ -1,12 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import AuthService from "../utils/auth";
-import BooksFromBd from "../utils/bd";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
+
 
 class LoginBar extends React.Component {
   logoutUser = () => {
@@ -44,8 +41,18 @@ class LoginBar extends React.Component {
 							>
 								Profile
 							</Nav.Link>
-							<Nav.Link href="/bookfeed">All Books</Nav.Link>
-							<Nav.Link href="/userfeed">All Bookshops</Nav.Link>
+							<Nav.Link
+								href="/bookfeed"
+								style={{ color: "white" }}
+							>
+								All Books
+							</Nav.Link>
+							<Nav.Link
+								href="/userfeed"
+								style={{ color: "white" }}
+							>
+								All Bookshops
+							</Nav.Link>
 
 							<Button
 								variant="outline-secondary"
@@ -60,43 +67,49 @@ class LoginBar extends React.Component {
 		);
     } else {
       return (
-        <div>
-          <nav>
-            <Navbar
-              className="bookish-navbar"
-              bg="dark"
-              variant="dark"
-              sticky="top"
-              expand="lg"
-            >
-              <Navbar.Brand className="bookish-logo" href="/">
-                Bookish
-                <p style={{ fontSize: "0.9rem", marginTop: "-11px" }}>
-                  just books
-                </p>
-              </Navbar.Brand>
+			<div>
+				<nav>
+					<Navbar
+						className="bookish-navbar"
+						bg="dark"
+						variant="dark"
+						sticky="top"
+						expand="lg"
+					>
+						<Navbar.Brand className="bookish-logo" href="/">
+							Bookish
+							<p
+								style={{
+									fontSize: "0.9rem",
+									marginTop: "-11px",
+								}}
+							>
+								just books
+							</p>
+						</Navbar.Brand>
 
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="navbar-links">
-                  <Nav.Link className="google" href="/login">
-                    Login
-                  </Nav.Link>
-                  <Nav.Link className="google" href="/signup">
-                    Signup
-                  </Nav.Link>
-                  <Nav.Link href="/login-google">
-                    <img
-                      style={{ height: "50px" }}
-                      src="../../images/google-logo.png"
-                    />
-                  </Nav.Link>
-                </Nav>
-              </Navbar.Collapse>
-            </Navbar>
-          </nav>
-        </div>
-      );
+						<Navbar.Toggle aria-controls="basic-navbar-nav" />
+						<Navbar.Collapse id="basic-navbar-nav">
+							<Nav className="navbar-links">
+								<Nav.Link className="google" href="/login">
+									Login
+								</Nav.Link>
+								<Nav.Link className="google" href="/signup">
+									Signup
+								</Nav.Link>
+								<Nav.Link href="/login-google">
+									<img
+										style={{ height: "50px" }}
+										alt="book-cover"
+										src="../../images/google-logo.png"
+									/>
+								</Nav.Link>
+							</Nav>
+						</Navbar.Collapse>
+					</Navbar>
+				</nav>
+			</div>
+		);
     }
   }
 }
