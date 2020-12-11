@@ -44,7 +44,7 @@ class EditBook extends React.Component {
     const price = this.state.price;
     const id = this.props.match.params.id;
 
-    booksFromDb.editBook(id, price).then((response) => {
+    booksFromDb.editBook(id, price).then(() => {
       toast.success("Price updated!");
       this.props.history.push(`/profile/${this.props.loggedInUser._id}`);
     }).catch(() => {
