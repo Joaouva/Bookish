@@ -1,7 +1,7 @@
 Hi there!
 
 
-The bookini app was made during the Ironhack Web Developer bootcamp.
+The bookish app was made during the Ironhack Web Developer bootcamp.
 
 In this app we build an app with react from 0. We build the app using creat react app start from there.
 
